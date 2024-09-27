@@ -22,6 +22,9 @@ public class EnergyHandler : MonoBehaviour
     [Tooltip("Energy loss per second while stressed.\nSet to 0 to disable stress affecting energy.")]
     public float stressedModifier;
 
+    [Tooltip("Energy loss per second while dying.\nSet to 0 to disable dying affecting energy.")]
+    public float dyingModifier;
+
     [Tooltip("Multiplier to the mood modifiers.\nSet to 0 to disable all moods affecting energy.")]
     public float moodEffect;
 
@@ -47,7 +50,12 @@ public class EnergyHandler : MonoBehaviour
             return happyModifier;
         }
 
-        if(states.IsStressed){
+        if (states.IsDying)
+        {
+            return stressedModifier;
+        }
+
+        if (states.IsStressed){
             return stressedModifier;
         }
 

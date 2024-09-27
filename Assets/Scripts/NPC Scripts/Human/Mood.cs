@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(States))]
+
 public class Mood : MonoBehaviour
 {
     /*
@@ -10,6 +12,11 @@ public class Mood : MonoBehaviour
         Neutral is baseline energy loss.
         Stressed humans lose energy faster.
     */
+    [Header("Mood Value")]
+
+    [Tooltip("The starting value for the human's mood.")]
+    [Range(-1, 1)]
+    public float moodStart;
 
     [Header("Thresholds")]
     
@@ -23,6 +30,7 @@ public class Mood : MonoBehaviour
 
     // -1 <= mood <= 1
     private float mood;
+    private States states;
 
     public bool IsHappy{
         get { return mood >= happyThreshold; }
@@ -32,7 +40,31 @@ public class Mood : MonoBehaviour
         get { return mood <= stressedThreshold; }
     }
 
+    public bool IsDying{
+        get { return mood <= -1; }
+    }
+
     void Awake(){
-        mood = 1;
+        mood = moodStart;
+        states = GetComponent<States>();
+    }
+
+    public float GetMood()
+    {
+        return mood;
+    }
+
+    // returns delta
+    public float ChangeMood(float delta)
+    {
+        // if the human is dead, don't change mood.
+        if (states.IsDead)
+        {
+            return 0;
+        }
+
+        mood += delta;
+        mood = Mathf.Clamp(mood, -1, 1);
+        return delta;
     }
 }

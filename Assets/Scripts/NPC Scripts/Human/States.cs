@@ -26,6 +26,10 @@ public class States : MonoBehaviour
         get { return mood.IsStressed;}
     }
 
+    public bool IsDying{
+        get { return mood.IsDying; }
+    }
+
     public bool IsEnergized{
         get { return energy.IsEnergized; }
     }

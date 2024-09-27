@@ -15,7 +15,7 @@ public class Energy : MonoBehaviour
         If energy ever gets to 0, the human dies.
     */
 
-    [Header("Energy values")]
+    [Header("Energy value")]
     [Tooltip("The maximum value for the energy bar.")]
     public float maxEnergy;
 
@@ -60,7 +60,7 @@ public class Energy : MonoBehaviour
         }
         
         energy += delta;
-        Mathf.Clamp(energy, 0, maxEnergy);
+        energy = Mathf.Clamp(energy, 0, maxEnergy);
         return delta;
     }
 }

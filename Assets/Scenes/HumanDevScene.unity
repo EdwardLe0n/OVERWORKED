@@ -130,8 +130,9 @@ GameObject:
   - component: {fileID: 8743314}
   - component: {fileID: 8743316}
   - component: {fileID: 8743315}
+  - component: {fileID: 8743321}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Human Debug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +155,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 100}
+  m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8743315
 MonoBehaviour:
@@ -180,7 +181,12 @@ MonoBehaviour:
 
     Stress
 
-    Total Delta'
+    Total Delta
+
+    isHappy / isStressed
+
+    isEnergized
+    / isTired'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -259,6 +265,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8743313}
   m_CullTransparentMesh: 1
+--- !u!114 &8743321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc53a8459bcca8409b67ce7c206ba63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  human: {fileID: 153432013}
+  display: {fileID: 8743315}
 --- !u!1 &31000292
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,10 +380,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 153432013}
-  - component: {fileID: 153432012}
   - component: {fileID: 153432011}
   - component: {fileID: 153432010}
   - component: {fileID: 153432009}
+  - component: {fileID: 153432014}
+  - component: {fileID: 153432015}
   m_Layer: 0
   m_Name: Human
   m_TagString: Untagged
@@ -396,8 +417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df675e33c388fd4f8a91171f1d19073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moodStart: 1
   happyThreshold: 0.5
   stressedThreshold: -0.5
+  dyingThreshold: -0.95
 --- !u!114 &153432011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,23 +436,6 @@ MonoBehaviour:
   maxEnergy: 300
   energizedThreshold: 0.75
   tiredThreshold: 0.25
---- !u!114 &153432012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153432008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 721b8f8eb707fb74b927c16fd00259f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleLoss: -1
-  happyModifier: 0
-  neutralModifier: -1
-  stressedModifier: -2
-  moodEffect: 2
 --- !u!4 &153432013
 Transform:
   m_ObjectHideFlags: 0
@@ -445,6 +451,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &153432014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153432008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721b8f8eb707fb74b927c16fd00259f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleLoss: -1
+  happyModifier: 0
+  neutralModifier: -1
+  stressedModifier: -2
+  dyingModifier: -5
+  moodEffect: 2
+--- !u!114 &153432015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153432008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27aedfc5dd7732041aba7a113df2a439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleLoss: -0.01
+  workModifier: -0.02
+  workEffect: 2
 --- !u!1 &494461590
 GameObject:
   m_ObjectHideFlags: 0
