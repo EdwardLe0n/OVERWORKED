@@ -27,6 +27,7 @@ public class EnergyHandler : MonoBehaviour
 
     private States states;
     private Energy energy;
+    private float totalDelta;
 
     void Awake(){
         states = GetComponent<States>();
@@ -34,10 +35,10 @@ public class EnergyHandler : MonoBehaviour
     }
 
     void Update(){
-        energy.ChangeEnergy(idleLoss * Time.deltaTime);
+        totalDelta = energy.ChangeEnergy(idleLoss * Time.deltaTime);
 
         if(states.IsWorking){
-            energy.ChangeEnergy(MoodModifier() * moodEffect * Time.deltaTime);
+            totalDelta += energy.ChangeEnergy(MoodModifier() * moodEffect * Time.deltaTime);
         }
     }
 
@@ -51,5 +52,9 @@ public class EnergyHandler : MonoBehaviour
         }
 
         return neutralModifier;
+    }
+
+    public float GetTotalDelta(){
+        return totalDelta;
     }
 }

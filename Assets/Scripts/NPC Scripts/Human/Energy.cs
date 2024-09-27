@@ -52,13 +52,15 @@ public class Energy : MonoBehaviour
         return energy;
     }
 
-    public void ChangeEnergy(float delta){
+    // returns delta
+    public float ChangeEnergy(float delta){
         // if the human is dead, don't change energy.
         if(IsDead){
-            return;
+            return 0;
         }
         
         energy += delta;
         Mathf.Clamp(energy, 0, maxEnergy);
+        return delta;
     }
 }
