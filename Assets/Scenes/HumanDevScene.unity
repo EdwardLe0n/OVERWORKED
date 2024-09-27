@@ -380,11 +380,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 153432013}
+  - component: {fileID: 153432014}
+  - component: {fileID: 153432015}
   - component: {fileID: 153432011}
   - component: {fileID: 153432010}
   - component: {fileID: 153432009}
-  - component: {fileID: 153432014}
-  - component: {fileID: 153432015}
   m_Layer: 0
   m_Name: Human
   m_TagString: Untagged
@@ -420,7 +420,6 @@ MonoBehaviour:
   moodStart: 1
   happyThreshold: 0.5
   stressedThreshold: -0.5
-  dyingThreshold: -0.95
 --- !u!114 &153432011
 MonoBehaviour:
   m_ObjectHideFlags: 0
