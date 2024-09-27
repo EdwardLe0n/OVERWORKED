@@ -8,6 +8,9 @@ using UnityEngine;
 
 public class EnergyHandler : MonoBehaviour
 {
+    /*
+        This component handles actually changing the human's energy.
+    */
     [Tooltip("Idle energy loss per second.\nSet to 0 to disable idle loss.")]
     public float idleLoss;
 

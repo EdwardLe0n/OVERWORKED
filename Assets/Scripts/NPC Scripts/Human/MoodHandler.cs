@@ -7,6 +7,10 @@ using UnityEngine;
 
 public class MoodHandler : MonoBehaviour
 {
+    /*
+        This component handles the actual changing of a human's mood.
+    */
+
     [Tooltip("Idle mood loss per second.\nSet to 0 to disable idle loss.")]
     public float idleLoss;
 

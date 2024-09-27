@@ -7,11 +7,13 @@ using UnityEngine;
 public class Mood : MonoBehaviour
 {
     /*
-        Mood affects energy loss from tasks.
+        Mood affects energy loss from DOING TASKS.
         Happy humans lose energy slower.
         Neutral is baseline energy loss.
         Stressed humans lose energy faster.
+        Dying humans lose energy very rapidly.
     */
+    
     [Header("Mood Value")]
 
     [Tooltip("The starting value for the human's mood.")]
