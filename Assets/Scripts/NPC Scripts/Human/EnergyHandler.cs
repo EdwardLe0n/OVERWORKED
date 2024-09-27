@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class EnergyHandler : MonoBehaviour
 {
-    [Tooltip("Idle energy loss per second.")]
+    [Tooltip("Idle energy loss per second.\nSet to 0 to disable idle loss.")]
     public float idleLoss;
 
     [Header("Mood Modifiers")]

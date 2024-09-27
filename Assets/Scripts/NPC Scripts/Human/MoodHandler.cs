@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class MoodHandler : MonoBehaviour
 {
-    [Tooltip("Idle mood loss per second.")]
+    [Tooltip("Idle mood loss per second.\nSet to 0 to disable idle loss.")]
     public float idleLoss;
 
     [Header("Working Modifiers")]
