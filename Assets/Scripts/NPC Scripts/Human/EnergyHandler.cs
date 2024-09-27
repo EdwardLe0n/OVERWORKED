@@ -52,7 +52,7 @@ public class EnergyHandler : MonoBehaviour
 
         if (states.IsDying)
         {
-            return stressedModifier;
+            return dyingModifier;
         }
 
         if (states.IsStressed){
