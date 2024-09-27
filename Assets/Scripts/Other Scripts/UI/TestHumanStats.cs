@@ -16,6 +16,7 @@ public class TestHumanStats : MonoBehaviour
         if (human.GetComponent<States>().IsDead)
         {
             text += "\nDead.";
+            display.text = text;
             return;
         }
 
