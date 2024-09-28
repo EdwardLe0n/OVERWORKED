@@ -17,6 +17,12 @@ public class MousePosition : MonoBehaviour
     // Ref of layers that we want the ray to hit
     public LayerMask layersToHit;
 
+    // Ref of layers we want to look for
+    public LayerMask layerToLookFor;
+
+    // Radius of the space to check sphere wise
+    public float radiusCheck = 1f;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -52,8 +58,17 @@ public class MousePosition : MonoBehaviour
     }
 
     // Checks all nearby elements in the scene
+    // Gonna use overlap Sphere as a tempalate of what to look for
+
+    // Ref: https://docs.unity3d.com/ScriptReference/Physics.OverlapSphere.html
     private void checkNearby()
     {
+
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, radiusCheck, layerToLookFor);
+        foreach (var hitCollider in hitColliders)
+        {
+            Debug.Log("Found Something!");
+        }
 
     }
 
