@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/* This component handles the movement and job setting of the human
+ * Use this when setting job station.
+ */
+
 [RequireComponent(typeof(Job))]
 [RequireComponent(typeof(NavMeshAgent))]
-
 
 public class HumanNav : MonoBehaviour
 {

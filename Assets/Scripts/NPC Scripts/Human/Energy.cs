@@ -4,17 +4,17 @@ using Unity.VisualScripting;
 using UnityEditor.EditorTools;
 using UnityEngine;
 
+
+/* Energy is the lifeblood of a human. Also affects task speed.
+ * Energized humans complete tasks faster.
+ * Neutral is baseline task completion.
+ * Tired humans complete tasks slower.
+ * Energy also slowly drains naturally over time.
+ * If energy ever gets to 0, the human dies.
+ */
+
 public class Energy : MonoBehaviour
 {
-    /*
-        Energy is the lifeblood of a human. Also affects task speed.
-        Energized humans complete tasks faster.
-        Neutral is baseline task completion.
-        Tired humans complete tasks slower.
-        Energy also slowly drains naturally over time.
-        If energy ever gets to 0, the human dies.
-    */
-
     [Header("Energy value")]
     [Tooltip("The maximum value for the energy bar.")]
     public float maxEnergy;

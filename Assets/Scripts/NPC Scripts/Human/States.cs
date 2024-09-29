@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+/* Use this component to collect all the states from other human scripts.
+ * If you need a state in code, get this component.
+ */
+
 [RequireComponent(typeof(Energy))]
 [RequireComponent(typeof(Mood))]
 [RequireComponent(typeof(Job))]
 
 public class States : MonoBehaviour
-{
-    /*
-        Use this component to collect all the states from other human scripts.
-        If you need a state in code, get this component.
-    */
-
+{ 
     private Energy energy;
     private Mood mood;
     private Job job;

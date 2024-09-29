@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+// This component handles actually changing the human's energy.
+
 [RequireComponent(typeof(Energy))]
 [RequireComponent(typeof(States))]
 
 public class EnergyHandler : MonoBehaviour
 {
-    /*
-        This component handles actually changing the human's energy.
-    */
     [Tooltip("Idle energy loss per second.\nSet to 0 to disable idle loss.")]
     public float idleLoss;
 

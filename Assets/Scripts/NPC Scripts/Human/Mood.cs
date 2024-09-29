@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Mood affects energy loss from DOING TASKS.
+ * Happy humans lose energy slower.
+ * Neutral is baseline energy loss.
+ * Stressed humans lose energy faster.
+ * Dying humans lose energy very rapidly.
+ */
+
 [RequireComponent(typeof(States))]
 
 public class Mood : MonoBehaviour
 {
-    /*
-        Mood affects energy loss from DOING TASKS.
-        Happy humans lose energy slower.
-        Neutral is baseline energy loss.
-        Stressed humans lose energy faster.
-        Dying humans lose energy very rapidly.
-    */
-    
     [Header("Mood Value")]
 
     [Tooltip("The starting value for the human's mood.")]
