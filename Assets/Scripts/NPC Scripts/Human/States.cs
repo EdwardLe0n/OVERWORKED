@@ -5,6 +5,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(Energy))]
 [RequireComponent(typeof(Mood))]
+[RequireComponent(typeof(Job))]
+
 public class States : MonoBehaviour
 {
     /*
@@ -12,18 +14,16 @@ public class States : MonoBehaviour
         If you need a state in code, get this component.
     */
 
-    [Tooltip("FOR TESTING, REMOVE WHEN WORKING IS IMPLEMENTED")]
-    public bool isWorking;
-
     private Energy energy;
     private Mood mood;
+    private Job job;
 
     public bool IsHappy{
-        get { return mood.IsHappy;}
+        get { return mood.IsHappy; }
     }
 
     public bool IsStressed{
-        get { return mood.IsStressed;}
+        get { return mood.IsStressed; }
     }
 
     public bool IsDying{
@@ -43,11 +43,12 @@ public class States : MonoBehaviour
     }
 
     public bool IsWorking{
-        get { return isWorking; }
+        get { return job.IsWorking; }
     }
 
     void Awake(){
         energy = GetComponent<Energy>();
         mood = GetComponent<Mood>();
+        job = GetComponent<Job>();
     }
 }
