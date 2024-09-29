@@ -21,7 +21,7 @@ public class MousePosition : MonoBehaviour
     public LayerMask layerToLookFor;
 
     // Radius of the space to check sphere wise
-    public float radiusCheck = 1f;
+    public float radiusCheck = .5f;
 
     private void Update()
     {
@@ -60,14 +60,31 @@ public class MousePosition : MonoBehaviour
     // Checks all nearby elements in the scene
     // Gonna use overlap Sphere as a tempalate of what to look for
 
-    // Ref: https://docs.unity3d.com/ScriptReference/Physics.OverlapSphere.html
+    // Ref: https://docs.unity3d.com/ScriptReference/Physics.OverlapCapsule.html
     private void checkNearby()
     {
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, radiusCheck, layerToLookFor);
+        // Gets an array of colliders that overlap a new sphere in a specific layer
+        Collider[] hitColliders = Physics.OverlapCapsule(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z),
+                                                         new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z),
+                                                            radiusCheck, layerToLookFor);
         foreach (var hitCollider in hitColliders)
         {
-            Debug.Log("Found Something!");
+
+            // Debug.Log("Found Something!");
+
+            // hitCollider.gameObject.GetComponent<Pickup>();
+            // Debug.Log(hitCollider.gameObject.name);
+
+            if (hitCollider.gameObject.GetComponent<Pickup>() != null)
+            {
+                //does something
+            }
+            else
+            {
+                Debug.Log(hitCollider.gameObject.name + " does not have the pick up script!");
+            }
+
         }
 
     }
