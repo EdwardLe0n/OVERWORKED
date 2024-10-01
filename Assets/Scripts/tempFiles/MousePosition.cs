@@ -37,7 +37,7 @@ public class MousePosition : MonoBehaviour
 
     private void Awake()
     {
-        listOfPossibleColliders.Clear();
+        listOfPossibleColliders = new List<colliderSpecs>();
     }
 
     private void Update()
