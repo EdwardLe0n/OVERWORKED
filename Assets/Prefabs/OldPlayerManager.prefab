@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6607778293516405050}
   - component: {fileID: 5678682438044073097}
   m_Layer: 0
-  m_Name: Player Manager
+  m_Name: OldPlayerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 0
-  m_MaxPlayerCount: -1
+  m_MaxPlayerCount: 2
   m_AllowJoining: 1
   m_JoinBehavior: 0
   m_PlayerJoinedEvent:
