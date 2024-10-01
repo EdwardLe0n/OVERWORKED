@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
+public class PlacingArea : MonoBehaviour
 {
     public float type;
 
-    public string debugType ()
+    public string debugType()
     {
 
-        switch (type) {
+        switch (type)
+        {
             case 1:
-                return "human";
+                return "table";
             case 2:
-                return "object";
+                return "station";
             default:
                 return "error";
         }
-            
 
     }
 

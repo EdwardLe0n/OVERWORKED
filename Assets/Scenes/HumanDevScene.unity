@@ -640,6 +640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testJob: {fileID: 105572054}
+  debug: 1
 --- !u!1 &252927663
 GameObject:
   m_ObjectHideFlags: 0

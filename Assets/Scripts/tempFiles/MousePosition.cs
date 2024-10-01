@@ -23,6 +23,23 @@ public class MousePosition : MonoBehaviour
     // Radius of the space to check sphere wise
     public float radiusCheck = .5f;
 
+    // Collider array that deals with the
+    private List<colliderSpecs> listOfPossibleColliders;
+
+
+    [System.Serializable]
+    public class colliderSpecs
+    {
+        public Collider collider;
+        public int collderObjectType;
+        public float priority;
+    }
+
+    private void Awake()
+    {
+        listOfPossibleColliders.Clear();
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -64,6 +81,9 @@ public class MousePosition : MonoBehaviour
     private void checkNearby()
     {
 
+        // Clears the list of possible colliders
+        listOfPossibleColliders.Clear();
+
         // Gets an array of colliders that overlap a new sphere in a specific layer
         Collider[] hitColliders = Physics.OverlapCapsule(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z),
                                                          new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z),
@@ -76,9 +96,24 @@ public class MousePosition : MonoBehaviour
             // hitCollider.gameObject.GetComponent<Pickup>();
             // Debug.Log(hitCollider.gameObject.name);
 
+            // Checks is a game onbject has the pick up script
             if (hitCollider.gameObject.GetComponent<Pickup>() != null)
             {
-                //does something
+
+                maybeDoThis(hitCollider, 1);
+
+                // Sanity check
+                Debug.Log(hitCollider.gameObject.name + " is pick up type " + hitCollider.gameObject.GetComponent<Pickup>().debugType());
+
+            }
+            else if (hitCollider.gameObject.GetComponent<PlacingArea>() != null)
+            {
+
+                maybeDoThis(hitCollider, 2);
+
+                // Sanity check
+                Debug.Log(hitCollider.gameObject.name + " is placing area type " + hitCollider.gameObject.GetComponent<PlacingArea>().debugType());
+
             }
             else
             {
@@ -86,6 +121,41 @@ public class MousePosition : MonoBehaviour
             }
 
         }
+
+        doSomething();
+
+    }
+
+    // colliderObjectType == 0 => button
+    // colliderObjectType == 1 => pickup
+    // colliderObjectType == 2 => placementArea
+
+
+    public void maybeDoThis( Collider hitCollider, int colliderObjectType)
+    {
+
+        colliderSpecs someNewSpecs = new colliderSpecs();
+
+        someNewSpecs.collider = hitCollider;
+        someNewSpecs.collderObjectType = colliderObjectType;
+        someNewSpecs.priority = -1.0f;
+
+        listOfPossibleColliders.Add(someNewSpecs);
+
+    }
+
+    // Once all of the elements have been tossed into the collider array, checks the left over possible elements and decides what it can do
+    public void doSomething()
+    {
+        
+    }
+
+    // returns the context of a player
+    // 0 == free hands
+    public int getContext ()
+    {
+
+        return 0;
 
     }
 

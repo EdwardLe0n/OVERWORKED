@@ -18,13 +18,19 @@ public class HumanNav : MonoBehaviour
     private Job job;
     private NavMeshAgent agent;
 
+    public bool debug = true;
+
     private void Awake()
     {
         job = GetComponent<Job>();
         agent = GetComponent<NavMeshAgent>();
 
         // FOR TESTING
-        SetJobTarget(testJob);
+        if (debug)
+        {
+            SetJobTarget(testJob);
+        }
+ 
     }
 
     public void SetJobTarget(Transform target)
