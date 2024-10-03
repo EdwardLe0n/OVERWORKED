@@ -8,6 +8,9 @@ public class InGameButton : MonoBehaviour
     public int id = -1;
     public float type = -1;
 
+    public GameObject obj1;
+    public GameObject obj2;
+
     public string debugType()
     {
 
@@ -29,12 +32,21 @@ public class InGameButton : MonoBehaviour
 
         switch (id) 
         {
-
+            case 1:
+                spawnPickUpTemp();
+                break;
             default:
-                Debug.Log(gameObject.name + "has a bad id!!!");
+                Debug.Log(gameObject.name + " has a bad id!!!");
                 break;
         
         }
+
+    }
+
+    private void spawnPickUpTemp()
+    {
+        GameObject clone = Instantiate(obj1);
+        clone.transform.position = new Vector3(-2f, 1f, -2f);
 
     }
 
