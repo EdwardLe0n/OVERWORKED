@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class InGameButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public int id = -1;
+    public float type = -1;
+
+    public string debugType()
     {
-        
+
+        switch (type)
+        {
+            case 1:
+                return "noise-maker";
+            case 2:
+                return "spawner";
+            case 3:
+                return "level editor";
+            default:
+                return "error";
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void onTouch()
     {
+
+        switch (id) 
+        {
+
+            default:
+                Debug.Log(gameObject.name + "has a bad id!!!");
+                break;
         
+        }
+
     }
+
 }
