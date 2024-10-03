@@ -16,7 +16,7 @@ public class HumanDie : MonoBehaviour
     public AnimationClip deathAnim;
     [Tooltip("Human visual animator")]
     public Animator animator;
-    
+
     [Header("Death")]
     [Tooltip("Prefab to instantiate on death")]
     public GameObject prefab;
@@ -54,7 +54,7 @@ public class HumanDie : MonoBehaviour
 
         animator.SetBool("died", true);
 
-        // prevent human from walking
+        // prevent human from walking while animation plays
         agent.enabled = false;
 
         // if human is currently picked up, will force the player to drop them to play animation.
