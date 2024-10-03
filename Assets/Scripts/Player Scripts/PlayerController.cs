@@ -293,6 +293,7 @@ public class PlayerController : MonoBehaviour
     {
 
         // Shouldn't be here but the IDE was yelling @ me so now it's here -Edward
+        // it needs to be in scope of the entire switch statement, right? I think that might be why -Andrew
         Pickup grabber;
 
         switch (someColldierSpecs.collderObjectType)
@@ -367,5 +368,13 @@ public class PlayerController : MonoBehaviour
 
     private void StartTimer(){
         holdTime += Time.deltaTime; //Timer for throwing
+    }
+
+    // Called by human when dying in a player's arms.
+    public void BasicDrop(){
+        currentItem.ItemDropped();
+        currentPick = null;
+        hasItem = false;
+        currentItem = null;
     }
 }

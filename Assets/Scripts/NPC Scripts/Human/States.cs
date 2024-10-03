@@ -11,12 +11,14 @@ using UnityEngine;
 [RequireComponent(typeof(Energy))]
 [RequireComponent(typeof(Mood))]
 [RequireComponent(typeof(Job))]
+[RequireComponent(typeof(Pickup))]
 
 public class States : MonoBehaviour
 { 
     private Energy energy;
     private Mood mood;
     private Job job;
+    private Pickup pickup;
 
     public bool IsHappy{
         get { return mood.IsHappy; }
@@ -46,9 +48,14 @@ public class States : MonoBehaviour
         get { return job.IsWorking; }
     }
 
+    public bool IsPickedUp{
+        get { return pickup.currentlyHeld; }
+    }
+
     void Awake(){
         energy = GetComponent<Energy>();
         mood = GetComponent<Mood>();
         job = GetComponent<Job>();
+        pickup = GetComponent<Pickup>();
     }
 }
