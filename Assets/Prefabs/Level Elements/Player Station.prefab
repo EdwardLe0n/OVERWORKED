@@ -123,3 +123,7 @@ MonoBehaviour:
   type: 2
   currentPick: {fileID: 0}
   hasItem: 0
+  inProgress: 0
+  timeRunning: 0
+  targetTime: 3
+  tempMaterial: {fileID: 2100000, guid: de48efd8fdef24a4389b1b5c1d622f66, type: 2}
