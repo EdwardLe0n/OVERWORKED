@@ -89,12 +89,12 @@ public class PlayerController2 : MonoBehaviour
             {
                 //does something
                 Pickup grabber = hitCollider.gameObject.GetComponent<Pickup>();
-                if(grabber.currentlyHeld && grabber.currentPlayer == gameObject){
+                if(grabber.currentlyHeld && grabber.currentHolder == gameObject){
                     grabber.ItemDropped();
                     currentItem = null; //Drops the item if the player has one and is the one holding it.
                     hasItem = false;
                     return;
-                } else if(grabber.currentlyHeld && grabber.currentPlayer != gameObject){
+                } else if(grabber.currentlyHeld && grabber.currentHolder != gameObject){
                     return; //Stops other players from interating with object in hand.
                 }
                 grabber.ItemGrabbed(gameObject);

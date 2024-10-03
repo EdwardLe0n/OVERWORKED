@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7509596498963073250}
   - component: {fileID: 1792189636462911083}
   - component: {fileID: 5221652751604873591}
-  - component: {fileID: 8570422128175376503}
+  - component: {fileID: 1850053720639770096}
   - component: {fileID: -673758505173279348}
   m_Layer: 7
   m_Name: Player Station
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8570422128175376503
+--- !u!65 &1850053720639770096
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,3 +121,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  currentPick: {fileID: 0}
+  hasItem: 0

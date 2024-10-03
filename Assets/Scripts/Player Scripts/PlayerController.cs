@@ -110,13 +110,14 @@ public class PlayerController : MonoBehaviour
         // This allows players to pick up items behind them, and may limit grabbing any items in front of them
         // System works but look into fixing later
 
+        listOfPossibleColliders.Clear();
+
         // Gets an array of colliders that overlap a new sphere in a specific layer
         Collider[] hitColliders = Physics.OverlapCapsule(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z),
                                                          new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z),
                                                             radiusCheck, layerToLookFor);
 
-        foreach (var hitCollider in hitColliders)
-        {
+        foreach (var hitCollider in hitColliders) {
 
             // Debug.Log("Found Something!");
 
@@ -187,8 +188,16 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("Careful " + gameObject.name + "! You have an item in hand!");
                     return -1;
                 }
+                else if (currentItem == hitCollider.gameObject.GetComponent<Pickup>())
+                {
+                    Debug.Log("Ignore this one");
+                    return -1;
+                }
                 break;
             case 2:
+
+                Debug.Log("Found a table");
+
                 if (hitCollider.gameObject.GetComponent<PlacingArea>() == null)
                 {
                     Debug.Log(hitCollider.gameObject.name + "  doesn't have the Placing Area Script");
@@ -201,7 +210,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (!hitCollider.gameObject.GetComponent<PlacingArea>().hasItem && !hasItem)
                 {
-                    Debug.Log("Careful " + gameObject.name + "! You can't place items on top of each other!");
+                    Debug.Log("Neither the table or the playe have an item!");
                     return -1;
                 }
                 break;
@@ -218,6 +227,8 @@ public class PlayerController : MonoBehaviour
         someNewSpecs.collderObjectType = colliderObjectType;
         someNewSpecs.priority = -1.0f;
 
+        Debug.Log( hitCollider.gameObject.name + " has been added to the list of possible colliders!");
+
         listOfPossibleColliders.Add(someNewSpecs);
 
         return 1;
@@ -226,6 +237,11 @@ public class PlayerController : MonoBehaviour
 
     private void throwObject(){
         currentItem.ThrowObject(); //calls function in pickup to throw the object
+
+        currentItem = null;
+        currentPick = null;
+        hasItem = false;
+
     }
 
     // Once all of the elements have been tossed into the collider array, checks the left over possible elements and decides what it can do
@@ -238,35 +254,88 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            // Sanity check
+            // Debug.Log("Amount of things in the listOfPossibleColliders " + listOfPossibleColliders.Count);
+
             // If there is, it will interact with the first element in the array
             doThisThing(listOfPossibleColliders[0]);
+
+            // Sanity check
+            Debug.Log("Interacted with " + listOfPossibleColliders[0].collider.gameObject.name + "through case " + listOfPossibleColliders[0].collderObjectType);
+
         }
 
     }
 
     public void doThisThing (colliderSpecs someColldierSpecs)
     {
-        
+
+        // Shouldn't be here but the IDE was yelling @ me so now it's here -Edward
+        Pickup grabber;
+
         switch (someColldierSpecs.collderObjectType)
         {
             // TODO: Comment This!!!!!!
             case 1:
-                Pickup grabber = someColldierSpecs.collider.gameObject.GetComponent<Pickup>();
-                if (grabber.currentlyHeld && grabber.currentPlayer == gameObject)
+                grabber = someColldierSpecs.collider.gameObject.GetComponent<Pickup>();
+                if (grabber.currentlyHeld && grabber.currentHolder == gameObject)
                 {
                     grabber.ItemDropped();
                     currentItem = null; //Drops the item if the player has one and is the one holding it.
                     hasItem = false;
                     return;
                 }
-                else if (grabber.currentlyHeld && grabber.currentPlayer != gameObject)
+                else if (grabber.currentlyHeld && grabber.currentHolder != gameObject)
                 {
                     return; //Stops other players from interating with object in hand.
                 }
                 grabber.ItemGrabbed(gameObject);
                 currentItem = grabber; // grabs the item and remembers the item
+                currentPick = currentItem.gameObject;
                 hasItem = true;
                 return;
+            case 2: 
+
+                // Will trigger when a player is placing an element down on a placing area
+                if (hasItem)
+                {
+                    // Refers to the player element current pick to get the game object
+                    grabber = currentPick.GetComponent<Pickup>();
+
+                    grabber.ItemDropped();
+                    grabber.ItemGrabbed(someColldierSpecs.collider.gameObject);
+
+                    // Updates the placing area info
+                    someColldierSpecs.collider.gameObject.GetComponent<PlacingArea>().itemGiven(currentPick);
+
+                    // Since the item is changing from being held by a player to being held by a placing area, then these vars arer reset
+                    currentItem = null;
+                    currentPick = null;
+                    hasItem = false;
+
+                    return;
+                }
+                // Will trigger when there's an item on a placing area
+                else
+                {
+                    // Grabs the item refernced in the Placing area script of the table
+                    grabber = someColldierSpecs.collider.gameObject.GetComponent<PlacingArea>().currentPick.GetComponent<Pickup>();
+
+                    grabber.ItemDropped();
+
+                    // Tells the system that it's now being held by this player
+                    grabber.ItemGrabbed(gameObject);
+                    
+                    // Fixes player vars to hold the new info
+                    currentItem = grabber;
+                    currentPick = currentItem.gameObject;
+                    hasItem = true;
+
+                    // Clears the data from the placing area
+                    someColldierSpecs.collider.gameObject.GetComponent<PlacingArea>().itemTaken();
+
+                    return;
+                }
             default:
                 Debug.Log("Some error in doThisThing!!!!");
                 return;

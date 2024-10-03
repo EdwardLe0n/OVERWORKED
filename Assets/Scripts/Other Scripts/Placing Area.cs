@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlacingArea : MonoBehaviour
 {
     public float type;
+
+    [Header("Current Item Variables")]
+    public GameObject currentPick;
     public bool hasItem = false;
+
     public string debugType()
     {
 
@@ -19,6 +23,18 @@ public class PlacingArea : MonoBehaviour
                 return "error";
         }
 
+    }
+
+    public void itemGiven(GameObject item)
+    {
+        currentPick = item;
+        hasItem = true;
+    }
+
+    public void itemTaken()
+    {
+        currentPick = null;
+        hasItem = false;
     }
 
 }
