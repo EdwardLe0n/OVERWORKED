@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8123439902115534922}
   - component: {fileID: 5810331154769337038}
   - component: {fileID: 705886496077258684}
+  - component: {fileID: -8978031508274763732}
   m_Layer: 7
   m_Name: Human
   m_TagString: Human
@@ -116,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testJob: {fileID: 0}
+  debug: 1
 --- !u!195 &8123439902115534922
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -162,6 +164,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b7b18aacb38184792a1479753423f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8978031508274763732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020551123310197398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67b431ab5755464b9bc4b012b8a0ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &8032165529050556152
 GameObject:
   m_ObjectHideFlags: 0
