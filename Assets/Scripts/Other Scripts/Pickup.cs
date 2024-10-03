@@ -36,7 +36,6 @@ public class Pickup : MonoBehaviour
     }
 
     void Update(){
-        // Why not just make the item a child of the player? -Andrew
         if(Pucked){
             transform.position = new Vector3(currentHolder.transform.position.x, currentHolder.transform.position.y + 1, currentHolder.transform.position.z);
             transform.rotation = currentHolder.transform.rotation; //sets position and rotation to be with the holder.
