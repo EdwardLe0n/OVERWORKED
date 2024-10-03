@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour
         someNewSpecs.collderObjectType = colliderObjectType;
         someNewSpecs.priority = -1.0f;
 
-        Debug.Log( hitCollider.gameObject.name + " has been added to the list of possible colliders!");
+        // Debug.Log( hitCollider.gameObject.name + " has been added to the list of possible colliders!");
 
         listOfPossibleColliders.Add(someNewSpecs);
 
@@ -250,7 +250,29 @@ public class PlayerController : MonoBehaviour
         // Checks if there's anything in the list
         if (listOfPossibleColliders.Count == 0)
         {
-            Debug.Log(gameObject.name + " says there's nothing to do!");
+            // If theres nothing to interact w/ the player will drop the currently held item
+            if (hasItem)
+            {
+
+                // creates an empty collider specs object
+                colliderSpecs someNewSpecs = new colliderSpecs();
+
+                // Attaches tossed in vars into the fresh specs object
+                someNewSpecs.collider = currentPick.GetComponent<Collider>();
+                someNewSpecs.collderObjectType = 1;
+                someNewSpecs.priority = -1.0f;
+
+                // Debug.Log( hitCollider.gameObject.name + " has been added to the list of possible colliders!");
+
+                listOfPossibleColliders.Add(someNewSpecs);
+
+                doThisThing(listOfPossibleColliders[0]);
+
+            }
+            else
+            {
+                Debug.Log(gameObject.name + " says there's nothing to do!");
+            }
         }
         else
         {
