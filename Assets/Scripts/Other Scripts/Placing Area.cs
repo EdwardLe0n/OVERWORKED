@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlacingArea : MonoBehaviour
 {
     public float type;
-
+    public bool hasItem = false;
     public string debugType()
     {
 

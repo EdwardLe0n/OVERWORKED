@@ -10,6 +10,22 @@ public class Pickup : MonoBehaviour
     public bool currentlyHeld = false;
     public float dropDistance = 1f;
     public float throwForce = 5f;
+
+    public float type;
+
+    public string debugType()
+    {
+
+        switch (type)
+        {
+            case 1:
+                return "human";
+            case 2:
+                return "object";
+            default:
+                return "error";
+        }
+    }
     void Start(){
         rb = GetComponent<Rigidbody>();
     }

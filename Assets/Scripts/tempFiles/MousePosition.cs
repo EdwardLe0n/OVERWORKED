@@ -130,7 +130,6 @@ public class MousePosition : MonoBehaviour
     // colliderObjectType == 1 => pickup
     // colliderObjectType == 2 => placementArea
 
-
     public void maybeDoThis( Collider hitCollider, int colliderObjectType)
     {
 
