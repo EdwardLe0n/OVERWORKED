@@ -11,10 +11,13 @@ using UnityEngine.AI;
 
 public class HumanDie : MonoBehaviour
 {
+    [Header("Animation")]
     [Tooltip("Animation to play upon death")]
     public AnimationClip deathAnim;
     [Tooltip("Human visual animator")]
     public Animator animator;
+    
+    [Header("Death")]
     [Tooltip("Prefab to instantiate on death")]
     public GameObject prefab;
     [Tooltip("Position/rotation of prefab instantiation relative to human")]
@@ -41,7 +44,7 @@ public class HumanDie : MonoBehaviour
         }
 
         if(states.IsDead){
-            Debug.Log("I died");
+            Debug.Log(transform.name + " died");
             StartCoroutine(Die());
         }
     }
