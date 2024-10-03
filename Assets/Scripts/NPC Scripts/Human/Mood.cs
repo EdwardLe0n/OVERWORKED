@@ -55,7 +55,9 @@ public class Mood : MonoBehaviour
         return mood;
     }
 
-    // returns delta
+    /* given a delta value, changes mood accordingly
+     * returns delta if successful, 0 if not
+     */
     public float ChangeMood(float delta)
     {
         // if the human is dead, don't change mood.

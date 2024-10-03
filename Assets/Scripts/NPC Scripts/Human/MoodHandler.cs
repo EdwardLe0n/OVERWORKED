@@ -42,7 +42,6 @@ public class MoodHandler : MonoBehaviour
         }
     }
 
-
     public float GetTotalDelta()
     {
         return totalDelta;

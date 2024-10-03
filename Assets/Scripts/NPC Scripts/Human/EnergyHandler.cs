@@ -48,6 +48,7 @@ public class EnergyHandler : MonoBehaviour
         }
     }
 
+    //Returns the appropriate MoodModifier based on state
     private float MoodModifier(){
         if(states.IsHappy){
             return happyModifier;
