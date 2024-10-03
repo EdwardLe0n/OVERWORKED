@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6259116860619488906}
   - component: {fileID: 4480136195607481955}
-  m_Layer: 0
+  - component: {fileID: 5993800078996847608}
+  m_Layer: 6
   m_Name: Dead Human
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,6 +51,27 @@ MonoBehaviour:
   dropDistance: 1
   throwForce: 5
   type: 2
+--- !u!135 &5993800078996847608
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998956151284938170}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4166880634543530809
 GameObject:
   m_ObjectHideFlags: 0
