@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5348070690916161883}
   - component: {fileID: 4385844662503877288}
   - component: {fileID: 822033813261189128}
-  - component: {fileID: 8790215811047538292}
+  - component: {fileID: 71502875230722267}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -171,8 +171,8 @@ MonoBehaviour:
     m_ActionName: Gameplay/Move
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8790215811047538292}
-        m_TargetAssemblyTypeName: PlayerController2, Assembly-CSharp
+      - m_Target: {fileID: 71502875230722267}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
@@ -191,8 +191,8 @@ MonoBehaviour:
     m_ActionName: 'Gameplay/PickUp1[/Keyboard/e]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8790215811047538292}
-        m_TargetAssemblyTypeName: PlayerController2, Assembly-CSharp
+      - m_Target: {fileID: 71502875230722267}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnPickup
         m_Mode: 0
         m_Arguments:
@@ -211,8 +211,8 @@ MonoBehaviour:
     m_ActionName: 'Gameplay/Sprint1[/Keyboard/leftShift]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8790215811047538292}
-        m_TargetAssemblyTypeName: PlayerController2, Assembly-CSharp
+      - m_Target: {fileID: 71502875230722267}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnSprint
         m_Mode: 0
         m_Arguments:
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8790215811047538292
+--- !u!114 &71502875230722267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1160625760998904285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a3e085d2d2dd874b87771411b8c52de, type: 3}
+  m_Script: {fileID: 11500000, guid: 8da3fdd6a2c7eb7408b4b166c254cc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
@@ -247,7 +247,7 @@ MonoBehaviour:
   radiusCheck: 0.5
   layerToLookFor:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
 --- !u!1 &5775484555972712095
 GameObject:
   m_ObjectHideFlags: 0
