@@ -54,8 +54,9 @@ public class HumanDie : MonoBehaviour
 
         animator.SetBool("died", true);
 
-        // prevent human from walking while animation plays
+        // prevent human from walking and being picked up while animation plays
         agent.enabled = false;
+        pickup.enabled = false;
 
         // if human is currently picked up, will force the player to drop them to play animation.
         if(pickup.IsPickedUp){
