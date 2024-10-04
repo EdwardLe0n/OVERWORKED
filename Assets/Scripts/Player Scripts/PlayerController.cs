@@ -143,6 +143,15 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log(hitCollider.gameObject.name + " is placing area type " + hitCollider.gameObject.GetComponent<PlacingArea>().debugType());
 
             }
+            else if (hitCollider.gameObject.GetComponent<InGameButton>() != null)
+            {
+
+                maybeDoThis(hitCollider, 0);
+
+                // Sanity check
+                //Debug.Log(hitCollider.gameObject.name + " is placing area type " + hitCollider.gameObject.GetComponent<PlacingArea>().debugType());
+
+            }
             else
             {
                 Debug.Log(hitCollider.gameObject.name + " does not have the one of the interactable script!");
@@ -297,6 +306,9 @@ public class PlayerController : MonoBehaviour
 
         switch (someColldierSpecs.collderObjectType)
         {
+            case 0:
+                someColldierSpecs.collider.gameObject.GetComponent<InGameButton>().onTouch();
+                return;
             // TODO: Comment This!!!!!!
             case 1:
                 grabber = someColldierSpecs.collider.gameObject.GetComponent<Pickup>();
