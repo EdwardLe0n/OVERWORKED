@@ -8,6 +8,8 @@ public class InGameButton : MonoBehaviour
     public int id = -1;
     public float type = -1;
 
+    [Tooltip("The position to spawn obj1 when activated")]
+    public Transform spawnPos;
     public GameObject obj1;
     public GameObject obj2;
 
@@ -46,7 +48,7 @@ public class InGameButton : MonoBehaviour
     private void spawnPickUpTemp()
     {
         GameObject clone = Instantiate(obj1);
-        clone.transform.position = new Vector3(-2f, 1f, -2f);
+        clone.transform.position = spawnPos.position;
 
     }
 
