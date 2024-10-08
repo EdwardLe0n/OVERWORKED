@@ -393,7 +393,7 @@ public class PlayerController : MonoBehaviour
                     return;
                 }
             case 3:
-                someColldierSpecs.collider.gameObject.GetComponent<WorkStation>().attemptingTask(.5f);
+                someColldierSpecs.collider.gameObject.GetComponent<WorkStation>().attemptingTask(.25f);
                 return;
             default:
                 Debug.Log("Some error in doThisThing!!!!");

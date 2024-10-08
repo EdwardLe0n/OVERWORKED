@@ -8,6 +8,9 @@ public class WorkStation : MonoBehaviour
     // Refilling, cleaning, etc
     public int taskType;
 
+    // Lets humans know of the ways they can walk up to a station
+    public int interactOrient;
+
     // Amount of time a task will take
     public float taskTime;
     // Current progress of a given task
