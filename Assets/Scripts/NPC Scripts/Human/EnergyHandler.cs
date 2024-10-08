@@ -7,7 +7,7 @@ using UnityEngine;
 // This component handles actually changing the human's energy.
 
 [RequireComponent(typeof(Energy))]
-[RequireComponent(typeof(States))]
+[RequireComponent(typeof(HumanStates))]
 
 public class EnergyHandler : MonoBehaviour
 {
@@ -31,12 +31,12 @@ public class EnergyHandler : MonoBehaviour
     [Tooltip("Multiplier to the mood modifiers.\nSet to 0 to disable all moods affecting energy.")]
     public float moodEffect;
 
-    private States states;
+    private HumanStates states;
     private Energy energy;
     private float totalDelta;
 
     void Awake(){
-        states = GetComponent<States>();
+        states = GetComponent<HumanStates>();
         energy = GetComponent<Energy>();
     }
 

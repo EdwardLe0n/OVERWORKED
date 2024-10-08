@@ -13,7 +13,7 @@ using UnityEngine;
 [RequireComponent(typeof(Job))]
 [RequireComponent(typeof(Pickup))]
 
-public class States : MonoBehaviour
+public class HumanStates : MonoBehaviour
 { 
     private Energy energy;
     private Mood mood;
