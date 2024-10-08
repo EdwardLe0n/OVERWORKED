@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 705886496077258684}
   - component: {fileID: -8978031508274763732}
   - component: {fileID: 3984013131265021349}
+  - component: {fileID: 8156217521483909332}
   m_Layer: 7
   m_Name: Human
   m_TagString: Human
@@ -119,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testJob: {fileID: 0}
-  debug: 1
+  debug: 0
 --- !u!195 &8123439902115534922
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -199,6 +200,33 @@ MonoBehaviour:
   animator: {fileID: 2171110274208312482}
   prefab: {fileID: 998956151284938170, guid: 500c7da836d92d5459cb2e7c72501b40, type: 3}
   location: {fileID: 4215870990327867291}
+--- !u!54 &8156217521483909332
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020551123310197398}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8032165529050556152
 GameObject:
   m_ObjectHideFlags: 0
