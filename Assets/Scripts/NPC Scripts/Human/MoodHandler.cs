@@ -6,7 +6,7 @@ using UnityEngine;
 // This component handles the actual changing of a human's mood.
 
 [RequireComponent(typeof(Mood))]
-[RequireComponent(typeof(States))]
+[RequireComponent(typeof(HumanStates))]
 
 public class MoodHandler : MonoBehaviour
 {
@@ -22,13 +22,13 @@ public class MoodHandler : MonoBehaviour
     [Tooltip("Multiplier to the working modifier.\nSet to 0 to disable work affecting energy.")]
     public float workEffect;
 
-    private States states;
+    private HumanStates states;
     private Mood mood;
     private float totalDelta;
 
     void Awake()
     {
-        states = GetComponent<States>();
+        states = GetComponent<HumanStates>();
         mood = GetComponent<Mood>();
     }
 

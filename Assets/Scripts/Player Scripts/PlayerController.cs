@@ -143,6 +143,15 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log(hitCollider.gameObject.name + " is placing area type " + hitCollider.gameObject.GetComponent<PlacingArea>().debugType());
 
             }
+            else if (hitCollider.gameObject.GetComponent<InGameButton>() != null)
+            {
+
+                maybeDoThis(hitCollider, 0);
+
+                // Sanity check
+                //Debug.Log(hitCollider.gameObject.name + " is placing area type " + hitCollider.gameObject.GetComponent<PlacingArea>().debugType());
+
+            }
             else
             {
                 Debug.Log(hitCollider.gameObject.name + " does not have the one of the interactable script!");
@@ -227,7 +236,7 @@ public class PlayerController : MonoBehaviour
         someNewSpecs.collderObjectType = colliderObjectType;
         someNewSpecs.priority = -1.0f;
 
-        Debug.Log( hitCollider.gameObject.name + " has been added to the list of possible colliders!");
+        // Debug.Log( hitCollider.gameObject.name + " has been added to the list of possible colliders!");
 
         listOfPossibleColliders.Add(someNewSpecs);
 
@@ -250,7 +259,29 @@ public class PlayerController : MonoBehaviour
         // Checks if there's anything in the list
         if (listOfPossibleColliders.Count == 0)
         {
-            Debug.Log(gameObject.name + " says there's nothing to do!");
+            // If theres nothing to interact w/ the player will drop the currently held item
+            if (hasItem)
+            {
+
+                // creates an empty collider specs object
+                colliderSpecs someNewSpecs = new colliderSpecs();
+
+                // Attaches tossed in vars into the fresh specs object
+                someNewSpecs.collider = currentPick.GetComponent<Collider>();
+                someNewSpecs.collderObjectType = 1;
+                someNewSpecs.priority = -1.0f;
+
+                // Debug.Log( hitCollider.gameObject.name + " has been added to the list of possible colliders!");
+
+                listOfPossibleColliders.Add(someNewSpecs);
+
+                doThisThing(listOfPossibleColliders[0]);
+
+            }
+            else
+            {
+                Debug.Log(gameObject.name + " says there's nothing to do!");
+            }
         }
         else
         {
@@ -271,10 +302,14 @@ public class PlayerController : MonoBehaviour
     {
 
         // Shouldn't be here but the IDE was yelling @ me so now it's here -Edward
+        // it needs to be in scope of the entire switch statement, right? I think that might be why -Andrew
         Pickup grabber;
 
         switch (someColldierSpecs.collderObjectType)
         {
+            case 0:
+                someColldierSpecs.collider.gameObject.GetComponent<InGameButton>().onTouch();
+                return;
             // TODO: Comment This!!!!!!
             case 1:
                 grabber = someColldierSpecs.collider.gameObject.GetComponent<Pickup>();
@@ -345,5 +380,13 @@ public class PlayerController : MonoBehaviour
 
     private void StartTimer(){
         holdTime += Time.deltaTime; //Timer for throwing
+    }
+
+    // Called by human when dying in a player's arms.
+    public void BasicDrop(){
+        currentItem.ItemDropped();
+        currentPick = null;
+        hasItem = false;
+        currentItem = null;
     }
 }

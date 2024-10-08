@@ -30,7 +30,6 @@ public class HumanNav : MonoBehaviour
         {
             SetJobTarget(testJob);
         }
- 
     }
 
     public void SetJobTarget(Transform target)
