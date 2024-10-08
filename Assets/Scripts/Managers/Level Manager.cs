@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     private float levelTimer = 0f; 
     public TextMeshProUGUI timerText;
     public GameObject pauseUI;
+
+    private bool isLevelCompleted;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,9 @@ public class LevelManager : MonoBehaviour
 
         float dur = levelDuration * 60f; // convert level duration to minutes (i know it's technically converting to seeconds)
         levelTimer = dur;
+
+        isLevelCompleted = false;
+
     }
 
     // Update is called once per frame
@@ -34,6 +39,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    // Updates the timer test every update except for when the pause menu is open
     void UpdateTimerText() 
     {
         float mins = Mathf.FloorToInt(levelTimer/60);
@@ -44,13 +50,19 @@ public class LevelManager : MonoBehaviour
     public void TogglePauseMenu()
     {
         pauseUI.SetActive(!pauseUI.activeSelf);
-        if(pauseUI.activeSelf) {
-            Time.timeScale = 0f;
-            // GamePaused = true;
+
+        // if a level has not completed, it'll run the time adjustment scripts
+        if (!isLevelCompleted)
+        {
+            // Deals with turning the timer back on and off
+            if(pauseUI.activeSelf) {
+                Time.timeScale = 0f;
+            }
+            else {
+                Time.timeScale = 1f;
+            }
         }
-        else {
-            Time.timeScale = 1f;
-            // GamePaused = false;
-        }
+
+       
     }
 }
