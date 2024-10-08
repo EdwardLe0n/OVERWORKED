@@ -152,6 +152,15 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log(hitCollider.gameObject.name + " is placing area type " + hitCollider.gameObject.GetComponent<PlacingArea>().debugType());
 
             }
+            else if (hitCollider.gameObject.GetComponent<WorkStation>() != null)
+            {
+
+                maybeDoThis(hitCollider, 3);
+
+                // Sanity check
+                //Debug.Log(hitCollider.gameObject.name + " is placing area type " + hitCollider.gameObject.GetComponent<PlacingArea>().debugType());
+
+            }
             else
             {
                 Debug.Log(hitCollider.gameObject.name + " does not have the one of the interactable script!");
@@ -220,6 +229,18 @@ public class PlayerController : MonoBehaviour
                 else if (!hitCollider.gameObject.GetComponent<PlacingArea>().hasItem && !hasItem)
                 {
                     Debug.Log("Neither the table or the playe have an item!");
+                    return -1;
+                }
+                break;
+            case 3:
+                if (hasItem)
+                {
+                    Debug.Log("Careful " + gameObject.name + "! You have an item in hand!");
+                    return -1;
+                }
+                else if (hitCollider.gameObject.GetComponent<WorkStation>().getStatus())
+                {
+                    Debug.Log("This task has already been completed!");
                     return -1;
                 }
                 break;
@@ -371,6 +392,9 @@ public class PlayerController : MonoBehaviour
 
                     return;
                 }
+            case 3:
+                someColldierSpecs.collider.gameObject.GetComponent<WorkStation>().attemptingTask(.5f);
+                return;
             default:
                 Debug.Log("Some error in doThisThing!!!!");
                 return;
