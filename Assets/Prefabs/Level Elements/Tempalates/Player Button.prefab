@@ -154,6 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   type: -1
-  spawnPos: {fileID: 0}
+  spawnPos: {fileID: 2448151982424763082}
   obj1: {fileID: 0}
   obj2: {fileID: 0}
