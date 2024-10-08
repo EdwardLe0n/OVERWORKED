@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     public static bool GamePaused; // can be removed if not needed
 
