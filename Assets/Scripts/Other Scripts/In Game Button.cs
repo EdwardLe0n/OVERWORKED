@@ -8,6 +8,11 @@ public class InGameButton : MonoBehaviour
     public int id = -1;
     public float type = -1;
 
+    [Header("Activation")]
+    [Tooltip("Effect to occur on press")]
+    public Activation activateEffect;
+
+    [Header("Spawning")]
     [Tooltip("The position to spawn obj1 when activated")]
     public Transform spawnPos;
     public GameObject obj1;
@@ -15,7 +20,6 @@ public class InGameButton : MonoBehaviour
 
     public string debugType()
     {
-
         switch (type)
         {
             case 1:
@@ -24,6 +28,8 @@ public class InGameButton : MonoBehaviour
                 return "spawner";
             case 3:
                 return "level editor";
+            case 4:
+                return "activator";
             default:
                 return "error";
         }
@@ -31,11 +37,13 @@ public class InGameButton : MonoBehaviour
 
     public void onTouch()
     {
-
         switch (id) 
         {
             case 1:
                 spawnPickUpTemp();
+                break;
+            case 2:
+                activateEffect.Activate();
                 break;
             default:
                 Debug.Log(gameObject.name + " has a bad id!!!");
