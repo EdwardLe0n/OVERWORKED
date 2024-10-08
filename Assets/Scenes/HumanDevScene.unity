@@ -514,6 +514,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2406212781667684167, guid: c0ed42fb725ae5e4793cdbc9afdba88d, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2406212781667684167, guid: c0ed42fb725ae5e4793cdbc9afdba88d, type: 3}
+      propertyPath: obj1
+      value: 
+      objectReference: {fileID: 4020551123310197398, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
+    - target: {fileID: 2406212781667684167, guid: c0ed42fb725ae5e4793cdbc9afdba88d, type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2448151982424763082, guid: c0ed42fb725ae5e4793cdbc9afdba88d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -610,6 +622,10 @@ PrefabInstance:
     - target: {fileID: 4020551123310197398, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
       propertyPath: m_Name
       value: Human
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954828690012559629, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
+      propertyPath: debug
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954828690012559629, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
       propertyPath: testJob

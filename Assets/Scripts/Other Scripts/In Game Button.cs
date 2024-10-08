@@ -48,7 +48,7 @@ public class InGameButton : MonoBehaviour
     private void spawnPickUpTemp()
     {
         GameObject clone = Instantiate(obj1);
-        clone.transform.position = spawnPos.position;
+        clone.transform.position = transform.position + spawnPos.localPosition;
 
     }
 
