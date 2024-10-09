@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public string levelSelectScene;
-    public string settingsScene;
     public string creditsScene;
+
+    public GameObject settingsMenu;
     
     public void PlayGame()
     {
@@ -16,7 +17,8 @@ public class MenuManager : MonoBehaviour
 
     public void OpenSettings()
     {
-        SceneManager.LoadScene(settingsScene);
+        // now using UI menu as opposed to separate scene
+        settingsMenu.SetActive(true);
     }
 
     public void Credits()
