@@ -16,7 +16,7 @@ public class Job : MonoBehaviour
         get { return jobStation != null && Vector3.Distance(transform.position, jobStation.position) <= 0.1; }
     }
 
-    public void SetStation(Transform station)
+    public void SetJobStation(Transform station)
     {
         jobStation = station;
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4322237770965993119}
   m_Layer: 6
   m_Name: Dead Human
-  m_TagString: Untagged
+  m_TagString: Dead Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

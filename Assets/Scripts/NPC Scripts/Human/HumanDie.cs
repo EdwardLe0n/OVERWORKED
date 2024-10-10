@@ -5,7 +5,7 @@ using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(States))]
+[RequireComponent(typeof(HumanStates))]
 [RequireComponent(typeof(Pickup))]
 [RequireComponent(typeof(NavMeshAgent))]
 
@@ -23,7 +23,7 @@ public class HumanDie : MonoBehaviour
     [Tooltip("Position/rotation of prefab instantiation relative to human")]
     public Transform location;
 
-    private States states;
+    private HumanStates states;
     private Pickup pickup;
     private NavMeshAgent agent;
 
@@ -32,7 +32,7 @@ public class HumanDie : MonoBehaviour
     private bool triggeredDie;
 
     void Awake(){
-        states = GetComponent<States>();
+        states = GetComponent<HumanStates>();
         pickup = GetComponent<Pickup>();
         agent = GetComponent<NavMeshAgent>();
     }
