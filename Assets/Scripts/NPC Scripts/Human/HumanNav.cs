@@ -30,12 +30,11 @@ public class HumanNav : MonoBehaviour
         {
             SetJobTarget(testJob);
         }
- 
     }
 
     public void SetJobTarget(Transform target)
     {
-        job.SetStation(target);
+        job.SetJobStation(target);
         agent.SetDestination(target.position);
     }
 }

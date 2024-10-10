@@ -9,7 +9,7 @@ using UnityEngine;
  * Dying humans lose energy very rapidly.
  */
 
-[RequireComponent(typeof(States))]
+[RequireComponent(typeof(HumanStates))]
 
 public class Mood : MonoBehaviour
 {
@@ -31,7 +31,7 @@ public class Mood : MonoBehaviour
 
     // -1 <= mood <= 1
     private float mood;
-    private States states;
+    private HumanStates states;
 
     public bool IsHappy{
         get { return mood >= happyThreshold; }
@@ -47,7 +47,7 @@ public class Mood : MonoBehaviour
 
     void Awake(){
         mood = moodStart;
-        states = GetComponent<States>();
+        states = GetComponent<HumanStates>();
     }
 
     public float GetMood()
@@ -55,7 +55,9 @@ public class Mood : MonoBehaviour
         return mood;
     }
 
-    // returns delta
+    /* given a delta value, changes mood accordingly
+     * returns delta if successful, 0 if not
+     */
     public float ChangeMood(float delta)
     {
         // if the human is dead, don't change mood.
