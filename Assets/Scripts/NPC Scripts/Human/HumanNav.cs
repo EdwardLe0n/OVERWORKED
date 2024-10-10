@@ -76,6 +76,8 @@ public class HumanNav : MonoBehaviour
                     // If the job hasn't been completed, then and only then will it be chosen as a target
                     if (!hitCollider.GetComponent<WorkStation>().getStatus())
                     {
+                        // this is why the human is walking into the workbench.
+                        // set to a separate transform on the workbench prefab where the human stands.
                         SetJobTarget(hitCollider.transform);
                         return;
                     }
