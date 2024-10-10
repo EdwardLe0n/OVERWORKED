@@ -6,11 +6,29 @@ using UnityEngine;
  * Do not use this to set job station. Use HumanNav
  */
 
-[RequireComponent(typeof(Energy))]
+[RequireComponent(typeof(HumanStates))]
+[RequireComponent(typeof(HumanNav))]
 
 public class Job : MonoBehaviour
 {
+    [Tooltip("How quickly the human completes task at base")]
+    public float jobSpeed;
+    [Tooltip("Multiplier to jobSpeed when energized.\nSet to 1 to disable happy multiplier.")]
+    public float energizedMultiplier;
+    [Tooltip("Multiplier to jobSpeed when neutral.\nSet to 1 to disable neutral multiplier.")]
+    public float neutralMultiplier;
+    [Tooltip("Multiplier to jobSpeed when tired.\nSet to 1 to disable tired multiplier.")]
+    public float tiredMultiplier;
+
     private Transform jobStation;
+
+    private HumanStates states;
+    private HumanNav humanNav;
+
+    void Awake(){
+        states = GetComponent<HumanStates>();
+        humanNav = GetComponent<HumanNav>();
+    }
 
     public bool IsWorking()
     {
@@ -26,13 +44,26 @@ public class Job : MonoBehaviour
             // by a human with energy dependent on their status
             if (IsWorking() && !jobStation.GetComponent<WorkStation>().getStatus())
             {
-                jobStation.GetComponent<WorkStation>().attemptingTask(this.GetComponent<Energy>().GetEnergy() * 0.00001f);
+                jobStation.GetComponent<WorkStation>().attemptingTask(jobSpeed * EnergyModifier() * Time.deltaTime);
             }
             else if (jobStation.GetComponent<WorkStation>().getStatus())
             {
-                this.GetComponent<HumanNav>().SetJobTarget(null);
+                humanNav.SetJobTarget(null);
             }
         }
+    }
+
+    // returns the correct energy multiplier based on energy level
+    private float EnergyModifier(){
+        if(states.IsEnergized){
+            return energizedMultiplier;
+        }
+
+        if (states.IsTired){
+            return tiredMultiplier;
+        }
+
+        return neutralMultiplier;
     }
 
     public void SetJobStation(Transform station)
