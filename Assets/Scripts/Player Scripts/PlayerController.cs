@@ -160,6 +160,15 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log(hitCollider.gameObject.name + " is placing area type " + hitCollider.gameObject.GetComponent<PlacingArea>().debugType());
 
             }
+            else if (hitCollider.gameObject.GetComponent<InGameButton>() != null)
+            {
+
+                maybeDoThis(hitCollider, 0);
+
+                // Sanity check
+                //Debug.Log(hitCollider.gameObject.name + " is placing area type " + hitCollider.gameObject.GetComponent<PlacingArea>().debugType());
+
+            }
             else
             {
                 Debug.Log(hitCollider.gameObject.name + " does not have the one of the interactable script!");
@@ -310,10 +319,14 @@ public class PlayerController : MonoBehaviour
     {
 
         // Shouldn't be here but the IDE was yelling @ me so now it's here -Edward
+        // it needs to be in scope of the entire switch statement, right? I think that might be why -Andrew
         Pickup grabber;
 
         switch (someColldierSpecs.collderObjectType)
         {
+            case 0:
+                someColldierSpecs.collider.gameObject.GetComponent<InGameButton>().onTouch();
+                return;
             // TODO: Comment This!!!!!!
             case 1:
                 grabber = someColldierSpecs.collider.gameObject.GetComponent<Pickup>();
@@ -384,5 +397,13 @@ public class PlayerController : MonoBehaviour
 
     private void StartTimer(){
         holdTime += Time.deltaTime; //Timer for throwing
+    }
+
+    // Called by human when dying in a player's arms.
+    public void BasicDrop(){
+        currentItem.ItemDropped();
+        currentPick = null;
+        hasItem = false;
+        currentItem = null;
     }
 }

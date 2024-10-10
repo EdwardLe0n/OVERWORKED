@@ -52,7 +52,9 @@ public class Energy : MonoBehaviour
         return energy;
     }
 
-    // returns delta
+    /* given a delta value, changes energy accordingly
+     * returns delta if successful, 0 if not
+     */
     public float ChangeEnergy(float delta){
         // if the human is dead, don't change energy.
         if(IsDead){

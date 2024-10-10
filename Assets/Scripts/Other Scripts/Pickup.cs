@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+
 public class Pickup : MonoBehaviour
 {
     [Range(0, -10)]
@@ -15,6 +17,11 @@ public class Pickup : MonoBehaviour
     public bool currentlyHeld = false;
     public float dropDistance = 1f;
     public float throwForce = 5f;
+
+    // I know this is pretty redundant but I didn't want to just change existing code -Andrew
+    public bool IsPickedUp{
+        get { return Pucked; }
+    }
 
     public float type;
     public ItemTrajectoryScript itemTrajectory;

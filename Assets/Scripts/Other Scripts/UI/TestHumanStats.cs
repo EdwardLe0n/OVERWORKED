@@ -13,22 +13,22 @@ public class TestHumanStats : MonoBehaviour
             "\nMood: " + human.GetComponent<Mood>().GetMood() +
             "\nEnergy Delta: " + human.GetComponent<EnergyHandler>().GetTotalDelta() +
             "\nMood Delta: " + human.GetComponent<MoodHandler>().GetTotalDelta();
-        if (human.GetComponent<States>().IsDead)
+        if (human.GetComponent<HumanStates>().IsDead)
         {
             text += "\nDead.";
             display.text = text;
             return;
         }
 
-        if (human.GetComponent<States>().IsHappy)
+        if (human.GetComponent<HumanStates>().IsHappy)
         {
             text += "\nHappy!";
         }
-        else if (human.GetComponent<States>().IsDying)
+        else if (human.GetComponent<HumanStates>().IsDying)
         {
             text += "\nDying";
         }
-        else if (human.GetComponent<States>().IsStressed)
+        else if (human.GetComponent<HumanStates>().IsStressed)
         {
             text += "\nStressed";
         }
@@ -37,11 +37,11 @@ public class TestHumanStats : MonoBehaviour
             text += "\nContent";
         }
 
-        if (human.GetComponent<States>().IsEnergized)
+        if (human.GetComponent<HumanStates>().IsEnergized)
         {
             text += "\nEnergized!";
         }
-        else if (human.GetComponent<States>().IsTired)
+        else if (human.GetComponent<HumanStates>().IsTired)
         {
             text += "\nTired";
         }
@@ -50,7 +50,7 @@ public class TestHumanStats : MonoBehaviour
             text += "\nAwake";
         }
 
-        if (human.GetComponent<States>().IsWorking)
+        if (human.GetComponent<HumanStates>().IsWorking)
         {
             text += "\nWorking";
         }
