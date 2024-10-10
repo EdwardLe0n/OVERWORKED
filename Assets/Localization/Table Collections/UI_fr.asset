@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: c7b2508c6a8b18f4883336e82395cfb4, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 991858925568
+    m_Localized: "Param\xE8tres"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33128494538752
+    m_Localized: 'Langue:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33709070098432
+    m_Localized: Commandes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34342393225216
+    m_Localized: 'Volume de la musique:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34645100339200
+    m_Localized: 'Volume des SFX:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35273214140416
+    m_Localized: Mode Arachnophobie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43159772340224
+    m_Localized: En pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43456657760256
+    m_Localized: Reprendre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43615030484992
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43775621996544
+    m_Localized: "Cr\xE9dits"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44005419524096
+    m_Localized: Retourner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44067230982144
+    m_Localized: Jouer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47266683822080
+    m_Localized: "S\xE9lectionner le Niveau"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
