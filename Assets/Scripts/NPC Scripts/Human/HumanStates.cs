@@ -45,7 +45,7 @@ public class HumanStates : MonoBehaviour
     }
 
     public bool IsWorking{
-        get { return job.IsWorking; }
+        get { return job.IsWorking(); }
     }
 
     public bool IsPickedUp{
