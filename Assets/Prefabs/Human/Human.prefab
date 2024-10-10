@@ -121,6 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testJob: {fileID: 0}
+  radiusCheck: 0.5
+  layerToLookFor:
+    serializedVersion: 2
+    m_Bits: 0
   debug: 0
 --- !u!195 &8123439902115534922
 NavMeshAgent:
@@ -168,6 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b7b18aacb38184792a1479753423f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jobSpeed: 1
+  energizedMultiplier: 1.5
+  neutralMultiplier: 1
+  tiredMultiplier: 0.5
 --- !u!114 &-8978031508274763732
 MonoBehaviour:
   m_ObjectHideFlags: 0
