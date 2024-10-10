@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour
     private float holdTime = 0f;
     private Pickup currentItem;
 
+    public delegate void WalkingAudio();
+    public static event WalkingAudio StartWalkingAudio;//Delegates for the audio.
+    public static event WalkingAudio StopWalkingAudio; 
+
     // Functions similarly to pairs so that developers can store multiple vcariables under an object in a list
     [System.Serializable]
     public class colliderSpecs
@@ -73,9 +77,21 @@ public class PlayerController : MonoBehaviour
         if (holding && hasItem) {
             StartTimer(); //Timer for the the throwing.
         }
+
+        if(holdTime >= holdDuration && currentItem != null){
+            currentItem.EnableLineRenderer();//Calls function in pickup to turn on the line renderer.
+        }
     }
 
-    public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
+    public void OnMove(InputAction.CallbackContext ctx){
+        if(ctx.performed){
+            StartWalkingAudio.Invoke();//Starts the walking sound
+        }
+        movementInput = ctx.ReadValue<Vector2>();
+        if(ctx.canceled){
+            StopWalkingAudio.Invoke();//Stops the walking sound
+        }
+    }
 
     public void OnSprint(InputAction.CallbackContext ctx){
         if(ctx.started || ctx.performed){
@@ -91,11 +107,12 @@ public class PlayerController : MonoBehaviour
         if (ctx.started){
             holdTime = 0f; //Resets the timer.
             holding = true;
-        }else if (ctx.canceled){
+        } else if (ctx.canceled){
             if (holdTime < holdDuration){
                 checkNearby(); //grabs or drops item if timer is smaller than duration.
             }
             if (holdTime >= holdDuration) {
+                currentItem.DisableLineRenderer();//Calls function in pickup to turn off the line renderer.
                 throwObject();
             }
             holding = false;

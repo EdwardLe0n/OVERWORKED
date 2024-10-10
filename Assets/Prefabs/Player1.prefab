@@ -221,6 +221,7 @@ MonoBehaviour:
   layerToLookFor:
     serializedVersion: 2
     m_Bits: 192
+  itemTrajectory: {fileID: 0}
 --- !u!54 &8214213565686407278
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    [Range(0, -10)]
+    public float customGravity;
+    private Vector3 gravity;
+    [Range(0, 20)]
+    public float throwSpeed;
     private bool Pucked = false;
     public GameObject currentHolder;
     private Rigidbody rb;
@@ -12,6 +17,7 @@ public class Pickup : MonoBehaviour
     public float throwForce = 5f;
 
     public float type;
+    public ItemTrajectoryScript itemTrajectory;
 
     public string debugType()
     {
@@ -28,6 +34,10 @@ public class Pickup : MonoBehaviour
     }
     void Start(){
         rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        gravity = new Vector3(0, customGravity, 0);
+        itemTrajectory = GetComponentInChildren<ItemTrajectoryScript>();
+        itemTrajectory.enabled = false;
     }
 
     void Update(){
@@ -35,6 +45,9 @@ public class Pickup : MonoBehaviour
             transform.position = new Vector3(currentHolder.transform.position.x, currentHolder.transform.position.y + 1, currentHolder.transform.position.z);
             transform.rotation = currentHolder.transform.rotation; //sets position and rotation to be with the holder.
         }
+        if(!currentlyHeld){
+            ApplyCustomGravity();//Applys the custom gravity to the game object. Only if not being held.
+        }   
     }
 
     public void ItemGrabbed(GameObject holder){
@@ -42,7 +55,6 @@ public class Pickup : MonoBehaviour
             gameObject.transform.SetParent(holder.transform);
             Pucked = true;
             currentlyHeld = true; //Sets the state so the item is grabbed by a holder
-            rb.useGravity = false;
             currentHolder = holder;
         }
     }
@@ -53,7 +65,6 @@ public class Pickup : MonoBehaviour
         Vector3 dropPosition = currentHolder.transform.position + currentHolder.transform.forward * dropDistance;
         gameObject.transform.position = dropPosition; //Drops the object infront of the holder
         Pucked = false;
-        rb.useGravity = true;
         currentHolder = null;
     }
 
@@ -61,12 +72,27 @@ public class Pickup : MonoBehaviour
         gameObject.transform.SetParent(null);
         currentlyHeld = false; //Sets state back to not being picked up
         
-        rb.AddForce(transform.forward.normalized * throwForce, ForceMode.Impulse);
+        rb.AddForce(transform.forward.normalized * throwSpeed, ForceMode.Impulse);
         //Throws the object infront of the holder throwing it.
 
         Pucked = false;
-        rb.useGravity = true;
         currentHolder = null;
     }
 
+    public void EnableLineRenderer(){
+        itemTrajectory.enabled = true;//enables the line renderer
+    }
+
+    public void DisableLineRenderer(){
+        itemTrajectory.enabled = false;//Disables the line renderer
+    }
+
+    public void ApplyCustomGravity()
+    {
+        rb.AddForce(gravity, ForceMode.Acceleration);//Adds the artificial gravity to the items.
+    }
+
+    public float GetCustomGravity() => customGravity;
+    public float GetThrowSpeed() => throwSpeed;//Gets all three values for the throwing of the item so it can be used for the line renderer
+    public Vector3 GetDirection() => transform.forward.normalized;
 }
