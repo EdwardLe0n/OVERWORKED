@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,7 +14,22 @@ public class LevelManager : MonoBehaviour
     public GameObject pauseUI;
 
     private bool isLevelCompleted;
-    
+
+    [Header("Tasks Values")]
+    public float numberOfTotalTasks;
+    public float numberOfCurrentTasks;
+
+    // Delegate handling
+    public delegate void CheckTheLevel();
+    public static CheckTheLevel checkTheLevel;
+
+    private void Awake()
+    {
+        // Adds the check tasks 
+        checkTheLevel += checkTasks;
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +38,13 @@ public class LevelManager : MonoBehaviour
         float dur = levelDuration * 60f; // convert level duration to minutes (i know it's technically converting to seeconds)
         levelTimer = dur;
 
+        // fixes up veriables at the start
         isLevelCompleted = false;
+
+        checkTheLevel();
+
+        // Sets the total number of tasks to the number of tasks that was found in the first call
+        numberOfTotalTasks = numberOfCurrentTasks;
 
     }
 
@@ -65,4 +87,43 @@ public class LevelManager : MonoBehaviour
 
        
     }
+
+    // Notifies all current tsaks to contact the level manager
+    void checkTasks()
+    {
+
+        numberOfCurrentTasks = 0f;
+
+        Debug.Log("Checking the level for tasks!");
+    }
+
+    // The function tasks call to let the level manager know of their status
+    public void recieveTaskInfo()
+    {
+        // Increments the number of tasks in a level
+        numberOfCurrentTasks += 1;
+
+        Debug.Log("Tasks found");
+
+    }
+
+    // Gets called when tasks are completed
+    public void taskCompleted()
+    {
+        // Increments the number of tasks in a level
+        numberOfCurrentTasks -= 1;
+
+        // Checks if there are any more current tasks
+        if (numberOfCurrentTasks <= 0)
+        {
+            Debug.Log("Level Done!");
+        }
+    }
+
+    public void debugTotalTasks()
+    {
+        Debug.Log("Tasks that still need to be completed: " + numberOfCurrentTasks);
+    }
+
+
 }
