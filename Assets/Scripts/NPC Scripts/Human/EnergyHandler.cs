@@ -41,8 +41,10 @@ public class EnergyHandler : MonoBehaviour
     }
 
     void Update(){
+        // idle energy loss
         totalDelta = energy.ChangeEnergy(idleLoss * Time.deltaTime);
 
+        // working energy loss
         if(states.IsWorking){
             totalDelta += energy.ChangeEnergy(MoodModifier() * moodEffect * Time.deltaTime);
         }

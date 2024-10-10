@@ -283,6 +283,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void throwObject(){
+        if(currentItem == null){
+            return;
+        }
+
         currentItem.ThrowObject(); //calls function in pickup to throw the object
 
         currentItem = null;

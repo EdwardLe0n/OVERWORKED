@@ -43,6 +43,7 @@ public class HumanDie : MonoBehaviour
             return;
         }
 
+        // if the human dies, start dying function
         if(states.IsDead){
             Debug.Log(transform.name + " died");
             StartCoroutine(Die());

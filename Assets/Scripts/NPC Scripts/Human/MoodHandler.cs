@@ -34,8 +34,10 @@ public class MoodHandler : MonoBehaviour
 
     void Update()
     {
+        // idle mood drain
         totalDelta = mood.ChangeMood(idleLoss * Time.deltaTime);
 
+        // drain mood while working
         if (states.IsWorking)
         {
             totalDelta += mood.ChangeMood(workModifier * workEffect * Time.deltaTime);
