@@ -45,4 +45,9 @@ public class LevelSelector : MonoBehaviour
             return false;
         }
     }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
