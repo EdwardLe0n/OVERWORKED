@@ -30,4 +30,10 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("quitting game...");
+        Application.Quit();
+    }
 }
