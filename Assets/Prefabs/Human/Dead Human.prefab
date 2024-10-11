@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1511409502087559477}
   - component: {fileID: 72789862508801807}
   - component: {fileID: 4322237770965993119}
+  - component: {fileID: 775272261981150696}
   m_Layer: 6
   m_Name: Dead Human
   m_TagString: Dead Human
@@ -95,11 +96,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67b431ab5755464b9bc4b012b8a0ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customGravity: -10
+  throwSpeed: 0
   currentHolder: {fileID: 0}
   currentlyHeld: 0
   dropDistance: 1
   throwForce: 5
   type: 2
+  itemTrajectory: {fileID: 0}
+--- !u!208 &775272261981150696
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998956151284938170}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.25, y: 0.05, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -0.1}
+  m_TimeToStationary: 0.5
 --- !u!1 &4166880634543530809
 GameObject:
   m_ObjectHideFlags: 0

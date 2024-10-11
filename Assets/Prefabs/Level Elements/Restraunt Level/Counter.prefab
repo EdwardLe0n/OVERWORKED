@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1907407761176169130}
   - component: {fileID: 4182161211304856945}
   - component: {fileID: 7554102758585972741}
+  - component: {fileID: 6141941858670408906}
   m_Layer: 7
   m_Name: Counter
   m_TagString: Untagged
@@ -126,3 +127,19 @@ MonoBehaviour:
   taskProgress: 0
   taskCompleted: 0
   levelMan: {fileID: 3020004993363017906, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
+--- !u!208 &6141941858670408906
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345705882615795628}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
