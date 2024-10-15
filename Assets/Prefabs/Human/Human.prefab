@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customGravity: -1
-  throwSpeed: 5
+  throwSpeed: 10
   currentHolder: {fileID: 0}
   currentlyHeld: 0
   dropDistance: 1
