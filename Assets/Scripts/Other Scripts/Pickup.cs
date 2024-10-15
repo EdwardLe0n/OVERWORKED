@@ -18,6 +18,8 @@ public class Pickup : MonoBehaviour
     public float dropDistance = 1f;
     public float throwForce = 5f;
 
+    public bool isPlayer;
+
     // I know this is pretty redundant but I didn't want to just change existing code -Andrew
     public bool IsPickedUp{
         get { return Pucked; }
@@ -43,8 +45,14 @@ public class Pickup : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
         gravity = new Vector3(0, customGravity, 0);
-        itemTrajectory = GetComponentInChildren<ItemTrajectoryScript>();
-        itemTrajectory.enabled = false;
+
+        // Fixes human item trajectory bug
+        if (isPlayer)
+        {
+            itemTrajectory = GetComponentInChildren<ItemTrajectoryScript>();
+            itemTrajectory.enabled = false;
+        }
+
     }
 
     void Update(){

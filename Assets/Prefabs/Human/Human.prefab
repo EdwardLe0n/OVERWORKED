@@ -194,6 +194,7 @@ MonoBehaviour:
   currentlyHeld: 0
   dropDistance: 1
   throwForce: 5
+  isPlayer: 0
   type: 1
   itemTrajectory: {fileID: 0}
 --- !u!114 &3984013131265021349
