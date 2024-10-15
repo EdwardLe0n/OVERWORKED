@@ -15,6 +15,8 @@ using UnityEngine;
 
 public class HumanStates : MonoBehaviour
 { 
+    public bool isRecharging;
+
     private Energy energy;
     private Mood mood;
     private Job job;

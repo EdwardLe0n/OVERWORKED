@@ -20,5 +20,8 @@ public class RechargeRooms : MonoBehaviour
         {
             return;
         }
+
+        HumanStates states = other.GetComponent<HumanStates>();
+        states.isRecharging = true;
     }
 }
