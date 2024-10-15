@@ -22,6 +22,32 @@ public class RechargeRooms : MonoBehaviour
         }
 
         HumanStates states = other.GetComponent<HumanStates>();
-        states.isRecharging = true;
+
+        // checks the type and starts the appropriate recharging action
+        switch(type){
+            case 0:
+                states.isRechargingEnergy = true;
+                break;
+            case 1:
+                states.isRechargingMood = true;
+                break;
+            default:
+                Debug.Log("Invalid Type");
+                break;
+        }
+    }
+
+    void OnTriggerExit(Collider other){
+        // if the object is not tagged as human, don't do anything
+        if(!other.CompareTag("Human"))
+        {
+            return;
+        }
+
+        HumanStates states = other.GetComponent<HumanStates>();
+
+        // disables all recharging
+        states.isRechargingEnergy = false;
+        states.isRechargingMood = false;
     }
 }
