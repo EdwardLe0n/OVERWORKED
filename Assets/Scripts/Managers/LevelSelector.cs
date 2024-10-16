@@ -12,11 +12,18 @@ public class LevelSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int levelReached = PlayerPrefs.GetInt("levelReached", 1); // get farthest level reached 
+
+        // assign level numbers to buttons
         for(int i = 0; i < levelButtons.Length; i++) {
             Button button = levelButtons[i];
             int levelnum = i + 1;
             TextMeshProUGUI text = button.GetComponentInChildren<TextMeshProUGUI>();
             text.text = levelnum.ToString();
+
+            if(i+1 > levelReached) {
+                button.interactable = false; // disable button if level not unlocked yet
+            }
         }
     }
 
@@ -27,6 +34,7 @@ public class LevelSelector : MonoBehaviour
 
         string levelName = "Level" + i;
         if(SceneExists(levelName)) {
+            LevelManager.CurrentLevelNumber = i;
             SceneManager.LoadScene(levelName);
         }
         else {

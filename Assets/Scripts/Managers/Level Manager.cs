@@ -6,12 +6,15 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
-    public static bool GamePaused; // can be removed if not needed
-
+    public static int CurrentLevelNumber;
+    
     public float levelDuration = 3f;
     private float levelTimer = 0f; 
     public TextMeshProUGUI timerText;
     public GameObject pauseUI;
+
+    public GameObject winScreen;
+    public GameObject loseScreen;
 
     private bool isLevelCompleted;
 
@@ -33,9 +36,9 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // GamePaused = false;
+        Debug.Log("level " + CurrentLevelNumber);
 
-        float dur = levelDuration * 60f; // convert level duration to minutes (i know it's technically converting to seeconds)
+        float dur = levelDuration * 60f; // convert level duration to minutes
         levelTimer = dur;
 
         // fixes up veriables at the start
@@ -51,9 +54,17 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(levelTimer >= 0) {
-            levelTimer -= Time.deltaTime;
-            UpdateTimerText();
+        if(!isLevelCompleted) {
+            if(levelTimer > 0f) {
+                levelTimer -= Time.deltaTime;
+                UpdateTimerText();
+            }
+            else {
+                levelTimer = 0f;
+                isLevelCompleted = true; // just to prevent timer from running any further
+                UpdateTimerText();
+                loseScreen.SetActive(true); // display lose screen
+            }
         }
 
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space)) {
@@ -72,20 +83,12 @@ public class LevelManager : MonoBehaviour
     public void TogglePauseMenu()
     {
         pauseUI.SetActive(!pauseUI.activeSelf);
-
-        // if a level has not completed, it'll run the time adjustment scripts
-        if (!isLevelCompleted)
-        {
-            // Deals with turning the timer back on and off
-            if(pauseUI.activeSelf) {
-                Time.timeScale = 0f;
-            }
-            else {
-                Time.timeScale = 1f;
-            }
+        if(pauseUI.activeSelf) {
+            Time.timeScale = 0f;
         }
-
-       
+        else {
+            Time.timeScale = 1f;
+        }
     }
 
     // Notifies all current tsaks to contact the level manager
@@ -117,6 +120,8 @@ public class LevelManager : MonoBehaviour
         if (numberOfCurrentTasks <= 0)
         {
             Debug.Log("Level Done!");
+
+            LevelComplete(); // level completes when all tasks done
         }
     }
 
@@ -125,5 +130,13 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Tasks that still need to be completed: " + numberOfCurrentTasks);
     }
 
+    void LevelComplete()
+    {
+        isLevelCompleted = true; // stops timer from running any further
+        PlayerPrefs.SetInt("levelReached", CurrentLevelNumber+1);
+        PlayerPrefs.Save();
 
+        winScreen.SetActive(true);
+        // TODO: add more level complete stuff and things
+    }
 }
