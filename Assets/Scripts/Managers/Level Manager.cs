@@ -113,6 +113,9 @@ public class LevelManager : MonoBehaviour
         // Increments the number of tasks in a level
         numberOfCurrentTasks -= 1;
 
+        // Sanity check
+        debugTotalTasks();
+
         // Checks if there are any more current tasks
         if (numberOfCurrentTasks <= 0)
         {
