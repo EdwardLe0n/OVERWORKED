@@ -58,6 +58,12 @@ public class HumanNav : MonoBehaviour
 
     public void Update()
     {
+        // if the NavMeshAgent is not enabled, don't do anything
+        if (!agent.enabled)
+        {
+            return;
+        }
+
         // will only check if the human is not currently working
         if (!job.IsWorking())
         {
