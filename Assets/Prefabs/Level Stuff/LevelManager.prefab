@@ -48,6 +48,8 @@ MonoBehaviour:
   levelDuration: 3
   timerText: {fileID: 0}
   pauseUI: {fileID: 0}
+  numberOfTotalTasks: 0
+  numberOfCurrentTasks: 0
 --- !u!114 &4419079321454310740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,5 +63,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSelectScene: 
-  settingsScene: 
   creditsScene: 
+  settingsMenu: {fileID: 0}

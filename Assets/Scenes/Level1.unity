@@ -2888,6 +2888,10 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1242870600}
+    - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
+      propertyPath: numberOfCurrentTasks
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3020004993363017906, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: m_Name
       value: GameManager
