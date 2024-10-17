@@ -65,4 +65,25 @@ public class Energy : MonoBehaviour
         energy = Mathf.Clamp(energy, 0, maxEnergy);
         return delta;
     }
+
+    public void TurnOff(){
+        EnergyHandler energyHandler = GetComponent<EnergyHandler>();
+        if (energyHandler != null){
+            energyHandler.enabled = false;
+            StartCoroutine(Asleep());
+        }
+    }
+
+    public IEnumerator Asleep(){
+        yield return 5f;
+        TurnOn();
+    }
+
+    public void TurnOn(){
+        EnergyHandler energyHandler = GetComponent<EnergyHandler>();
+        if (energyHandler != null){
+            energyHandler.enabled = true;
+            energy = maxEnergy;
+        }
+    }
 }
