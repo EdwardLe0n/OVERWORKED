@@ -45,6 +45,7 @@ public class Pickup : MonoBehaviour
         gravity = new Vector3(0, customGravity, 0);
         itemTrajectory = GetComponentInChildren<ItemTrajectoryScript>();
         itemTrajectory.enabled = false;
+
     }
 
     void Update(){

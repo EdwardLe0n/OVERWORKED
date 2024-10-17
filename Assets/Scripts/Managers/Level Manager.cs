@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("Tasks Values")]
     public float numberOfTotalTasks;
-    public float numberOfCurrentTasks;
+    public float numberOfCurrentTasks = 0f;
 
     // Delegate handling
     public delegate void CheckTheLevel();
@@ -28,6 +28,11 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
+
+        debugTotalTasks();
+
+        numberOfCurrentTasks = 0;
+
         // Adds the check tasks 
         checkTheLevel += checkTasks;
 
@@ -45,6 +50,8 @@ public class LevelManager : MonoBehaviour
         isLevelCompleted = false;
 
         checkTheLevel();
+
+        debugTotalTasks();
 
         // Sets the total number of tasks to the number of tasks that was found in the first call
         numberOfTotalTasks = numberOfCurrentTasks;
@@ -104,7 +111,7 @@ public class LevelManager : MonoBehaviour
     public void recieveTaskInfo()
     {
         // Increments the number of tasks in a level
-        numberOfCurrentTasks += 1;
+        numberOfCurrentTasks += 1f;
 
         Debug.Log("Tasks found");
 
@@ -114,7 +121,10 @@ public class LevelManager : MonoBehaviour
     public void taskCompleted()
     {
         // Increments the number of tasks in a level
-        numberOfCurrentTasks -= 1;
+        numberOfCurrentTasks -= 1f;
+
+        // Sanity check
+        debugTotalTasks();
 
         // Checks if there are any more current tasks
         if (numberOfCurrentTasks <= 0)
