@@ -70,6 +70,22 @@ MonoBehaviour:
     m_Localized: "S\xE9lectionner le Niveau"
     m_Metadata:
       m_Items: []
+  - m_Id: 2616827632205824
+    m_Localized: "R\xE9essayez"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2616965352177664
+    m_Localized: "Niveau Termin\xE9!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2617309650010112
+    m_Localized: "Temps \xE9coul\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2617611493097472
+    m_Localized: Continuer
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
