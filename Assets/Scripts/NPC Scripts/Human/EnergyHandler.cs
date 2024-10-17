@@ -31,6 +31,10 @@ public class EnergyHandler : MonoBehaviour
     [Tooltip("Multiplier to the mood modifiers.\nSet to 0 to disable all moods affecting energy.")]
     public float moodEffect;
 
+    [Header("Recharging")]
+    [Tooltip("% per second to recharge energy by.\nSet to 0 to disable recharging energy")]
+    public float energyRecharge;
+
     private HumanStates states;
     private Energy energy;
     private float totalDelta;
@@ -41,6 +45,14 @@ public class EnergyHandler : MonoBehaviour
     }
 
     void Update(){
+        // while human is in a recharging room, do not lose energy to idle loss
+        if (states.isRechargingEnergy)
+        {
+            // energy recharge is relative to max energy
+            totalDelta = energy.ChangeEnergy(energy.maxEnergy * energyRecharge * Time.deltaTime);
+            return;
+        }
+
         // idle energy loss
         totalDelta = energy.ChangeEnergy(idleLoss * Time.deltaTime);
 
