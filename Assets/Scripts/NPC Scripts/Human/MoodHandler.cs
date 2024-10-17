@@ -13,13 +13,15 @@ public class MoodHandler : MonoBehaviour
     [Tooltip("Idle mood loss per second.\nSet to 0 to disable idle loss.")]
     public float idleLoss;
 
-    [Header("Working Modifiers")]
-
+    [Header("Modifiers")]
     [Tooltip("Mood loss per second while working.\nSet to 0 to disable work affecting mood.")]
     public float workModifier;
 
     [Tooltip("Multiplier to the working modifier.\nSet to 0 to disable work affecting energy.")]
     public float workEffect;
+
+    [Tooltip("Mood loss per second while carried.\nSet to 0 to disable carrying affecting mood.")]
+    public float carryModifier;
 
     [Header("Recharging")]
     [Tooltip("value per second to recharge mood by.\nRemember mood is [-1,1]\nSet to 0 to disable recharging mood")]
@@ -46,6 +48,12 @@ public class MoodHandler : MonoBehaviour
 
         // idle mood drain
         totalDelta = mood.ChangeMood(idleLoss * Time.deltaTime);
+
+        // carry stress
+        if (states.IsPickedUp)
+        {
+            totalDelta += mood.ChangeMood(carryModifier * Time.deltaTime);
+        }
 
         // drain mood while working
         if (states.IsWorking)
