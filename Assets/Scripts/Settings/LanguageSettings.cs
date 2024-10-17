@@ -18,8 +18,15 @@ public class LanguageSettings : MonoBehaviour
     IEnumerator SetDefaultLangButton()
     {
         yield return LocalizationSettings.InitializationOperation;
-        var currentLocale = LocalizationSettings.SelectedLocale;
 
+        int savedLangIndex = PlayerPrefs.GetInt("langKey", -1);
+        if (savedLangIndex >= 0 && savedLangIndex < LocalizationSettings.AvailableLocales.Locales.Count)
+        {
+            // If a valid language index is found in PlayerPrefs, set it as the current locale
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[savedLangIndex];
+        }
+
+        var currentLocale = LocalizationSettings.SelectedLocale;
         var locales = LocalizationSettings.AvailableLocales.Locales;
         for(int i = 0; i < locales.Count; i++) {
             if(locales[i] == currentLocale) {
@@ -65,6 +72,10 @@ public class LanguageSettings : MonoBehaviour
 
         if(langIndex >= 0 && langIndex < locales.Count) {
             LocalizationSettings.SelectedLocale = locales[langIndex];
+
+            PlayerPrefs.SetInt("langKey", langIndex);
+            PlayerPrefs.Save(); // save lang as soon as it's updated
+
             Debug.Log("Language changed to: " + locales[langIndex].Identifier);
         }
         else {

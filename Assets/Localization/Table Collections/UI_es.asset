@@ -70,6 +70,22 @@ MonoBehaviour:
     m_Localized: Seleccionar Nivel
     m_Metadata:
       m_Items: []
+  - m_Id: 2616827632205824
+    m_Localized: Intenta de nuevo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2616965352177664
+    m_Localized: Nivel Completado!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2617309650010112
+    m_Localized: "Se acab\xF3 el tiempo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2617611493097472
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

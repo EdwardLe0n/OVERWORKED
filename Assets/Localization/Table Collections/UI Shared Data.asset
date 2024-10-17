@@ -67,6 +67,22 @@ MonoBehaviour:
     m_Key: level
     m_Metadata:
       m_Items: []
+  - m_Id: 2616827632205824
+    m_Key: retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2616965352177664
+    m_Key: win
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2617309650010112
+    m_Key: lose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2617611493097472
+    m_Key: continue
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
