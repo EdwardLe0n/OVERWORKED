@@ -70,4 +70,28 @@ public class Mood : MonoBehaviour
         mood = Mathf.Clamp(mood, -1, 1);
         return delta;
     }
+
+    //Pillow change mood to max.
+    //Turn off handlers.
+
+    public void TurnOff(){
+        MoodHandler moodHandler = GetComponent<MoodHandler>();
+        if (moodHandler != null){
+            moodHandler.enabled = false;
+            StartCoroutine(Asleep());
+        }
+    }
+
+    public IEnumerator Asleep(){
+        yield return 5f;
+        TurnOn();
+    }
+
+    public void TurnOn(){
+        MoodHandler moodHandler = GetComponent<MoodHandler>();
+        if (moodHandler != null){
+            moodHandler.enabled = true;
+            mood = 1f;
+        }
+    }
 }
