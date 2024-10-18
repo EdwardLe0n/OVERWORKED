@@ -38,18 +38,27 @@ public class Job : MonoBehaviour
 
     private void Update()
     {
-        if (jobStation != null)
+        // if no job station, do nothing
+        if (jobStation == null)
         {
-            // if the human is classified as working, it will let the job station know that it's currently getting completed
-            // by a human with energy dependent on their status
-            if (IsWorking() && !jobStation.GetComponent<WorkStation>().getStatus())
-            {
-                jobStation.GetComponent<WorkStation>().attemptingTask(jobSpeed * EnergyModifier() * Time.deltaTime);
-            }
-            else if (jobStation.GetComponent<WorkStation>().getStatus())
-            {
-                humanNav.SetJobTarget(null);
-            }
+            return;
+        }
+
+        // if the job station is a test transform, do nothing
+        if(jobStation.GetComponent<WorkStation>() == null)
+        {
+            return;
+        }
+
+        // if the human is classified as working, it will let the job station know that it's currently getting completed
+        // by a human with energy dependent on their status
+        if (IsWorking() && !jobStation.GetComponent<WorkStation>().getStatus())
+        {
+            jobStation.GetComponent<WorkStation>().attemptingTask(jobSpeed * EnergyModifier() * Time.deltaTime);
+        }
+        else if (jobStation.GetComponent<WorkStation>().getStatus())
+        {
+            humanNav.SetJobTarget(null);
         }
     }
 
