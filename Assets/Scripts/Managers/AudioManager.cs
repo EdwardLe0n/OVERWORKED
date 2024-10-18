@@ -5,24 +5,32 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AudioSource backgroundMusic;
-    public AudioSource playerWalking;
+    public AudioSource pillowShoot;
+    public AudioSource pillowHit;
+    public AudioSource itemBonked;
     void Start()
     {
-        PlayerController.StartWalkingAudio += StartWalking;//The delegate for the walking sound
-        PlayerController.StopWalkingAudio += StopWalking;
         backgroundMusic.Play();
+        PillowGun.ShotGun += PillowShot;
+        Pillow.pillowHit += PillowHit;
+        Pickup.bonk += PickupItem;
     }
 
     void OnDestroy(){
-        PlayerController.StartWalkingAudio += StartWalking;//The delegate for the walking sound
-        PlayerController.StopWalkingAudio += StopWalking;
+        PillowGun.ShotGun -= PillowShot;
+        Pillow.pillowHit -= PillowHit;
+        Pickup.bonk -= PickupItem;
     }
 
-    public void StartWalking(){
-        playerWalking.Play();//Starts the walking audio
+    public void PillowShot(){
+        pillowShoot.Play();
     }
 
-    public void StopWalking(){
-        playerWalking.Stop();//Stops the walking audio
+    public void PillowHit(){
+        pillowHit.Play();
+    }
+
+    public void PickupItem(){
+        itemBonked.Play();
     }
 }
