@@ -70,6 +70,22 @@ MonoBehaviour:
     m_Localized: Select Level
     m_Metadata:
       m_Items: []
+  - m_Id: 2616827632205824
+    m_Localized: Retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2616965352177664
+    m_Localized: Level Complete!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2617309650010112
+    m_Localized: Time Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2617611493097472
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

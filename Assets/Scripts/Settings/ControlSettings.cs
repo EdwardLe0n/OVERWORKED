@@ -26,7 +26,7 @@ public class ControlSettings : MonoBehaviour
     private InputAction sprintActionP2; 
 
     private List<int> actionIndexes;
-    private List<string> defaultKeys; // TODO: add to save data
+    private List<string> defaultKeys;
 
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
 
@@ -46,6 +46,7 @@ public class ControlSettings : MonoBehaviour
         sprintActionP2 = playerControlsMap.FindAction("Sprint2");
 
         SaveDefaultBindings();
+        LoadCustomKeybinds(); // load whatever's saved in player prefs
         UpdateKeyTextUI();
 
         // get action indexes for p1 movement
@@ -56,23 +57,30 @@ public class ControlSettings : MonoBehaviour
         for(int i = 6; i < 10; i++) {
             actionIndexes[i] = i - 4;
         }
+        // other actions not necessary bc their index is 0 by default
     }
 
     void SaveDefaultBindings()
     {
         // save default keys for p1
         for(int i = 0; i < 4; i++) {
-            defaultKeys[i] = moveActionP1.bindings[i+2].effectivePath;
+            defaultKeys[i] = moveActionP1.bindings[i+7].effectivePath; // getting from default WASD (Move)
         }
-        defaultKeys[4] = pickupActionP1.bindings[0].effectivePath;  
-        defaultKeys[5] = sprintActionP1.bindings[0].effectivePath;
+
+        InputAction pickupDefault1 = playerControlsMap.FindAction("PickUp1 (default)");
+        defaultKeys[4] = pickupDefault1.bindings[0].effectivePath;  
+        InputAction sprintDefault1 = playerControlsMap.FindAction("Sprint1 (default)");
+        defaultKeys[5] = sprintDefault1.bindings[0].effectivePath;
 
         // save default keys for p2
         for(int i = 6; i < 10; i++) {
-            defaultKeys[i] = moveActionP2.bindings[i-4].effectivePath;
+            defaultKeys[i] = moveActionP2.bindings[i+1].effectivePath; // getting from default WASD (Move2)
         }
-        defaultKeys[10] = pickupActionP2.bindings[0].effectivePath;  
-        defaultKeys[11] = sprintActionP2.bindings[0].effectivePath;
+
+        InputAction pickupDefault2 = playerControlsMap.FindAction("PickUp2 (default)");
+        defaultKeys[10] = pickupDefault2.bindings[0].effectivePath;  
+        InputAction sprintDefault2 = playerControlsMap.FindAction("Sprint2 (default)");
+        defaultKeys[11] = sprintDefault2.bindings[0].effectivePath;
     }
 
     public void StartRebinding(GameObject clickedButton)
@@ -150,7 +158,7 @@ public class ControlSettings : MonoBehaviour
 
     public void RebindComplete(int buttonIndex)
     {
-        // update button text with new key (TODO: check for p1/p2 based on index)
+        // update button text with new key
         string humanReadableKey = GetKeyText(buttonIndex);
         rebindButtonsList[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text = humanReadableKey;
         rebindButtonsList[buttonIndex].SetActive(true);
@@ -166,6 +174,8 @@ public class ControlSettings : MonoBehaviour
 
         // hide waiting message
         waitingText.SetActive(false);
+
+        SaveCustomKeybinds(); // save the changes
 
         rebindingOperation.Dispose(); // need to dispose of the memory
     }
@@ -224,15 +234,7 @@ public class ControlSettings : MonoBehaviour
         }
 
         UpdateKeyTextUI();
-
-        /* (old method --> reset all keys for both players)
-        inputActions.RemoveAllBindingOverrides();
-        for(int i = 0; i < rebindButtonsList.Count; i++) {
-            int a = actionIndexes[i];
-            string humanReadableKey = GetKeyText(i, a);
-            rebindButtonsList[i].GetComponentInChildren<TextMeshProUGUI>().text = humanReadableKey;
-        }
-        */
+        SaveCustomKeybinds(); // to prevent any prev saved keys from returning next session
     }
 
     void UpdateKeyTextUI()
@@ -241,5 +243,59 @@ public class ControlSettings : MonoBehaviour
             string humanReadableKey = GetKeyText(i);
             rebindButtonsList[i].GetComponentInChildren<TextMeshProUGUI>().text = humanReadableKey;
         }
-    }    
+    } 
+
+    void SaveCustomKeybinds()
+    {
+        for (int i = 0; i < 12; i++)
+        {
+            string effectivePath = GetEffectivePath(i);
+            PlayerPrefs.SetString("Keybind" + i, effectivePath);
+        }
+        PlayerPrefs.Save();
+    }  
+
+    string GetEffectivePath(int keyIndex)
+    {
+        if (keyIndex < 4) {
+            return moveActionP1.bindings[keyIndex + 2].effectivePath;
+        } else if (keyIndex == 4) {
+            return pickupActionP1.bindings[0].effectivePath;
+        } else if (keyIndex == 5) {
+            return sprintActionP1.bindings[0].effectivePath;
+        } else if (keyIndex >= 6 && keyIndex < 10) {
+            return moveActionP2.bindings[keyIndex - 4].effectivePath;
+        } else if (keyIndex == 10) {
+            return pickupActionP2.bindings[0].effectivePath;
+        } else if (keyIndex == 11) {
+            return sprintActionP2.bindings[0].effectivePath;
+        }
+        return "";
+    } 
+
+    void LoadCustomKeybinds()
+    {
+        for (int i = 0; i < 12; i++)
+        {
+            string savedPath = PlayerPrefs.GetString("Keybind" + i, defaultKeys[i]); // default to original key
+            ApplyKeybind(i, savedPath);
+        }
+    }
+
+    void ApplyKeybind(int index, string path)
+    {
+        if (index < 4) {
+            moveActionP1.ApplyBindingOverride(index + 2, path);
+        } else if (index == 4) {
+            pickupActionP1.ApplyBindingOverride(0, path);
+        } else if (index == 5) {
+            sprintActionP1.ApplyBindingOverride(0, path);
+        } else if (index >= 6 && index < 10) {
+            moveActionP2.ApplyBindingOverride(index - 4, path);
+        } else if (index == 10) {
+            pickupActionP2.ApplyBindingOverride(0, path);
+        } else if (index == 11) {
+            sprintActionP2.ApplyBindingOverride(0, path);
+        }
+    }
 }
