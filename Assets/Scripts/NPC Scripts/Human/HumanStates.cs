@@ -14,7 +14,7 @@ using UnityEngine;
 [RequireComponent(typeof(Pickup))]
 
 public class HumanStates : MonoBehaviour
-{ 
+{
     private Energy energy;
     private Mood mood;
     private Job job;
@@ -51,6 +51,11 @@ public class HumanStates : MonoBehaviour
     public bool IsPickedUp{
         get { return pickup.currentlyHeld; }
     }
+
+    // if human isCatted, they will work as if they were tired (slower), and will lose energy as if they were happy (slower)
+    public bool isCatted;
+    // if human isCoffeed, they will work as if they were energized (faster), and will lose energy as if they are stressed (faster)
+    public bool isCoffeed;
 
     void Awake(){
         energy = GetComponent<Energy>();

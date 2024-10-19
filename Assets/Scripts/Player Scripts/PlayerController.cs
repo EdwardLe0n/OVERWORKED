@@ -30,10 +30,7 @@ public class PlayerController : MonoBehaviour
     private float holdDuration = 1f;
     private float holdTime = 0f;
     private Pickup currentItem;
-
-    public delegate void WalkingAudio();
-    public static event WalkingAudio StartWalkingAudio;//Delegates for the audio.
-    public static event WalkingAudio StopWalkingAudio; 
+    private Walking walking;
 
     // Functions similarly to pairs so that developers can store multiple vcariables under an object in a list
     [System.Serializable]
@@ -49,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Start(){
         currentSpeed = speed;
+        walking = GetComponent<Walking>();
     }
 
     // When the player is initially awakened, then the list of possible colliders is set to a fresh list
@@ -84,20 +82,26 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnMove(InputAction.CallbackContext ctx){
-        if(ctx.performed){
-            StartWalkingAudio.Invoke();//Starts the walking sound
+        if(ctx.started){
+            walking.PlayAudio();
         }
         movementInput = ctx.ReadValue<Vector2>();
         if(ctx.canceled){
-            StopWalkingAudio.Invoke();//Stops the walking sound
+            walking.StopAudio();
         }
     }
 
     public void OnSprint(InputAction.CallbackContext ctx){
-        if(ctx.started || ctx.performed){
+        if(ctx.started){
             if(!hasItem){
                 currentSpeed = sprint;
             } //Lets the player sprint and stops them from them from sprinting if they have an object
+            if(hasItem){
+                Interactable interact = currentPick.GetComponent<Interactable>();
+                if(interact != null){
+                    interact.UseItem();
+                }
+            }
         } else if (ctx.canceled) {
             currentSpeed = speed;
         }
