@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Coffee : Interactable
 {
+
+    public float coffeeTime;
+
     public override void UseItem(){
         Debug.Log("Coffee");
         checkNearby();
@@ -29,13 +32,34 @@ public class Coffee : Interactable
             // Debug.Log(hitCollider.gameObject.name);
 
             // Checks is a game onbject has the pick up script
+
+            // AKA if the object is a human
             if (hitCollider.gameObject.GetComponent<Energy>() != null)
             {
-                EnergyHandler coffeeEnergy = hitCollider.gameObject.GetComponent<EnergyHandler>();
+                // the human's states
+                HumanStates states = hitCollider.gameObject.GetComponent<HumanStates>();
 
+                // the human's MoodHandler
                 MoodHandler coffeeMood = hitCollider.gameObject.GetComponent<MoodHandler>();
                 
+                // change human mood
+                coffeeMood.ChangeMood(emotional);
+
+                // affect productivity
+                Debug.Log(hitCollider.name + " has been coffeed");
+                states.isCoffeed = true;
+
+                StartCoroutine(CoffeeDecay(states));
+                return;
             }
         }
+    }
+
+    IEnumerator CoffeeDecay(HumanStates states){
+        // coffeeTime seconds later...
+        yield return new WaitForSeconds(coffeeTime);
+        // stop the buff
+        Debug.Log(states.name + " has been UNcoffeed");
+        states.isCoffeed = false;
     }
 }

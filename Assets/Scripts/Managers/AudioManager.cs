@@ -48,6 +48,7 @@ public class AudioManager : MonoBehaviour
         pillowHit.Play();
     }
 
+
     public void PickupItem(){
         itemBonked.Play();
     }
