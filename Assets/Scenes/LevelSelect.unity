@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 141413105}
   - component: {fileID: 141413104}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Back Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1132,6 +1132,26 @@ PrefabInstance:
     m_TransformParent: {fileID: 201341715}
     m_Modifications:
     - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.96862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1537,6 +1557,26 @@ PrefabInstance:
     m_TransformParent: {fileID: 201341715}
     m_Modifications:
     - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.96862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1846,6 +1886,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 201341715}
     m_Modifications:
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.97017765
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.5990566
+      objectReference: {fileID: 0}
     - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

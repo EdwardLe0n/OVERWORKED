@@ -64,6 +64,14 @@ public class EnergyHandler : MonoBehaviour
 
     //Returns the appropriate MoodModifier based on state
     private float MoodModifier(){
+        if(states.isCoffeed){
+            return stressedModifier;
+        }
+
+        if(states.isCatted){
+            return happyModifier;
+        }
+        
         if(states.IsHappy){
             return happyModifier;
         }
@@ -82,5 +90,9 @@ public class EnergyHandler : MonoBehaviour
 
     public float GetTotalDelta(){
         return totalDelta;
+    }
+
+    public float ChangeEnergy(float delta){
+        return energy.ChangeEnergy(delta);
     }
 }

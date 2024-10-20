@@ -26,6 +26,9 @@ public class Pickup : MonoBehaviour
     public float type;
     public ItemTrajectoryScript itemTrajectory;
 
+    public delegate void PickupBonked();
+    public static event PickupBonked bonk;
+
     public string debugType()
     {
 
@@ -85,6 +88,10 @@ public class Pickup : MonoBehaviour
 
         Pucked = false;
         currentHolder = null;
+    }
+
+    private void OnCollisionEnter(Collision collision){
+        bonk.Invoke();
     }
 
     public void EnableLineRenderer(){

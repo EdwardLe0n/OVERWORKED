@@ -66,4 +66,8 @@ public class MoodHandler : MonoBehaviour
     {
         return totalDelta;
     }
+
+    public float ChangeMood(float delta){
+        return mood.ChangeMood(delta);
+    }
 }
