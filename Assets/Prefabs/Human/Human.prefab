@@ -217,6 +217,7 @@ MonoBehaviour:
   stressedModifier: -2
   dyingModifier: -5
   moodEffect: 2
+  energyRecharge: 0.05
 --- !u!114 &72754852805091384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +233,8 @@ MonoBehaviour:
   idleLoss: -0.01
   workModifier: -0.02
   workEffect: 2
+  carryModifier: -0.05
+  moodRecharge: 0.1
 --- !u!114 &273248652121462909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +290,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4020551123310197398}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.3
   m_Speed: 3.5
@@ -314,6 +317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a578dd302d7417b49a6e22b648502af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRechargingEnergy: 0
+  isRechargingMood: 0
 --- !u!114 &705886496077258684
 MonoBehaviour:
   m_ObjectHideFlags: 0

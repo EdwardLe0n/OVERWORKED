@@ -14,7 +14,9 @@ using UnityEngine;
 [RequireComponent(typeof(Pickup))]
 
 public class HumanStates : MonoBehaviour
-{
+{ 
+    public bool isRechargingEnergy;
+    public bool isRechargingMood;
     private Energy energy;
     private Mood mood;
     private Job job;

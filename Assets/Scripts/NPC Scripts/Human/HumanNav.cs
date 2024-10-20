@@ -64,6 +64,12 @@ public class HumanNav : MonoBehaviour
             return;
         }
 
+        // debug mode where it will simply path toward a transform
+        if (debug)
+        {
+            job.SetJobStation(testJob);
+        }
+
         // will only check if the human is not currently working
         if (!job.IsWorking())
         {
