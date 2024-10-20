@@ -8,6 +8,24 @@ public class AudioManager : MonoBehaviour
     public AudioSource pillowShoot;
     public AudioSource pillowHit;
     public AudioSource itemBonked;
+
+    private void Awake()
+    {
+        // Basic logic to make sure there's only ever one instance of the sound manager
+
+        GameObject[] soundManagers = GameObject.FindGameObjectsWithTag("Sound Manager");
+
+        if (soundManagers.Length > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this);
+        }
+
+    }
+
     void Start()
     {
         backgroundMusic.Play();
@@ -29,6 +47,7 @@ public class AudioManager : MonoBehaviour
     public void PillowHit(){
         pillowHit.Play();
     }
+
 
     public void PickupItem(){
         itemBonked.Play();

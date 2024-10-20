@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Coffee : Interactable
 {
+
     public float coffeeTime;
 
     public override void UseItem(){
@@ -31,6 +32,7 @@ public class Coffee : Interactable
             // Debug.Log(hitCollider.gameObject.name);
 
             // Checks is a game onbject has the pick up script
+
             // AKA if the object is a human
             if (hitCollider.gameObject.GetComponent<Energy>() != null)
             {
