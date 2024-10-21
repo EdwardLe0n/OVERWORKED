@@ -319,6 +319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRechargingEnergy: 0
   isRechargingMood: 0
+  isCatted: 0
+  isCoffeed: 0
 --- !u!114 &705886496077258684
 MonoBehaviour:
   m_ObjectHideFlags: 0
