@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productivity: 0
-  emotional: -0.5
+  emotional: 0.5
   radiusCheck: 0.5
   layerToLookFor:
     serializedVersion: 2
