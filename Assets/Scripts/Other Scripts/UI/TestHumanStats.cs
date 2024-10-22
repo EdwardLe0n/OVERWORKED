@@ -11,8 +11,8 @@ public class TestHumanStats : MonoBehaviour
     void Update(){
         string text = "Energy: " + human.GetComponent<Energy>().GetEnergy() +
             "\nMood: " + human.GetComponent<Mood>().GetMood() +
-            "\nEnergy Delta: " + human.GetComponent<EnergyHandler>().GetTotalDelta() +
-            "\nMood Delta: " + human.GetComponent<MoodHandler>().GetTotalDelta();
+            "\nEnergy Delta: " + human.GetComponent<EnergyHandler>().GetTotalDelta()/Time.deltaTime+
+            "\nMood Delta: " + human.GetComponent<MoodHandler>().GetTotalDelta()/Time.deltaTime;
         if (human.GetComponent<HumanStates>().IsDead)
         {
             text += "\nDead.";
