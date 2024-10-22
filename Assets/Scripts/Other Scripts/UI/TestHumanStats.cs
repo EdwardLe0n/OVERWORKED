@@ -20,7 +20,14 @@ public class TestHumanStats : MonoBehaviour
             return;
         }
 
-        if (human.GetComponent<HumanStates>().IsHappy)
+        if(human.GetComponent<HumanStates>().isCoffeed){
+            text += "\nStressed (Coffee)";
+        }
+        else if (human.GetComponent<HumanStates>().isCatted)
+        {
+            text += "\nHappy (Cat)";
+        }
+        else if (human.GetComponent<HumanStates>().IsHappy)
         {
             text += "\nHappy!";
         }
@@ -36,8 +43,15 @@ public class TestHumanStats : MonoBehaviour
         {
             text += "\nContent";
         }
-
-        if (human.GetComponent<HumanStates>().IsEnergized)
+        
+        if(human.GetComponent<HumanStates>().isCoffeed){
+            text += "\nEnergized (Coffee)";
+        }
+        else if (human.GetComponent<HumanStates>().isCatted)
+        {
+            text += "\nTired (Cat)";
+        }
+        else if (human.GetComponent<HumanStates>().IsEnergized)
         {
             text += "\nEnergized!";
         }
@@ -54,6 +68,8 @@ public class TestHumanStats : MonoBehaviour
         {
             text += "\nWorking";
         }
+
+        text += "\nJob Speed * Multiplier: " + (human.GetComponent<Job>().jobSpeed * human.GetComponent<Job>().EnergyModifier());
 
         display.text = text;
     }

@@ -186,8 +186,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -204,8 +204,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -503,6 +503,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6656885030538529476, guid: 45166f54ee1288b4880da70e04f1ba19, type: 3}
+      propertyPath: coffeeTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9007714317956576517, guid: 45166f54ee1288b4880da70e04f1ba19, type: 3}
       propertyPath: m_Name
       value: Coffee
@@ -588,6 +592,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4554262440291077934, guid: 8b6e546c5d841ef40a6468711df8eb64, type: 3}
+      propertyPath: catTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7891758679206686726, guid: 8b6e546c5d841ef40a6468711df8eb64, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.741448
@@ -996,7 +1004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3852006058845783665, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.003
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 3852006058845783665, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
       propertyPath: m_LocalPosition.z
