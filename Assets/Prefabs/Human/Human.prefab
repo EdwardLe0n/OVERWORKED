@@ -232,8 +232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleLoss: -0.01
   workModifier: -0.02
-  workEffect: 1
-  carryModifier: -0.05
+  workEffect: 2
+  carryModifier: -0.025
   moodRecharge: 0.1
 --- !u!114 &273248652121462909
 MonoBehaviour:
