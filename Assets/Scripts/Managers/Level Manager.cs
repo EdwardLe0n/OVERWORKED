@@ -29,10 +29,11 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
 
-        debugTotalTasks();
+        //debugTotalTasks();
 
         numberOfCurrentTasks = 0;
 
+        checkTheLevel += resetCurrentTasksVal;
         // Adds the check tasks 
         checkTheLevel += checkTasks;
 
@@ -49,9 +50,9 @@ public class LevelManager : MonoBehaviour
         // fixes up veriables at the start
         isLevelCompleted = false;
 
-        checkTheLevel();
+        checkTheLevel += debugTotalTasks;
 
-        debugTotalTasks();
+        checkTheLevel();
 
         // Sets the total number of tasks to the number of tasks that was found in the first call
         numberOfTotalTasks = numberOfCurrentTasks;
@@ -96,6 +97,12 @@ public class LevelManager : MonoBehaviour
         else {
             Time.timeScale = 1f;
         }
+    }
+
+    // sets the current tasks val to 0f
+    void resetCurrentTasksVal()
+    {
+        numberOfCurrentTasks = 0f;
     }
 
     // Notifies all current tsaks to contact the level manager
