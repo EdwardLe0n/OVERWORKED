@@ -1055,14 +1055,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 273248652121462909, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
-      propertyPath: sleepTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2291303865167612056, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
-      propertyPath: sleepTime
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3852006058845783665, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.7426355
@@ -1107,22 +1099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Human
       objectReference: {fileID: 0}
-    - target: {fileID: 4536722505092363603, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7954828690012559629, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
-      propertyPath: debug
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7954828690012559629, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
       propertyPath: testJob
       value: 
       objectReference: {fileID: 250199471}
-    - target: {fileID: 8156217521483909332, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
