@@ -319,6 +319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRechargingEnergy: 0
   isRechargingMood: 0
+  isCatted: 0
+  isCoffeed: 0
 --- !u!114 &705886496077258684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67b431ab5755464b9bc4b012b8a0ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customGravity: -1
+  customGravity: -9.81
   throwSpeed: 7.5
   currentHolder: {fileID: 0}
   currentlyHeld: 0

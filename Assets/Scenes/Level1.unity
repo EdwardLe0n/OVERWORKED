@@ -2785,6 +2785,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4777354142718876173, guid: 780e2d33246a26d4fb7d37a3487a6bcc, type: 3}
   m_PrefabInstance: {fileID: 1371916531}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2076721071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7428457569662720887, guid: 318ad029108edef4c92b8a361d799526, type: 3}
+  m_PrefabInstance: {fileID: 1297387159019510607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b79eec5748761542a5457062bc7ba1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2128716940 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8899386186317343102, guid: 13bd5e9373823074d91bb2df04445bbe, type: 3}
@@ -3096,7 +3107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7823305881912268579, guid: 318ad029108edef4c92b8a361d799526, type: 3}
       propertyPath: m_Name
-      value: Timer Canvas
+      value: Top UI Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3165,28 +3176,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1242870600}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
+      propertyPath: winScreen
+      value: 
+      objectReference: {fileID: 581033909103194506}
+    - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: loseScreen
       value: 
       objectReference: {fileID: 581033909103194505}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
-      propertyPath: levelDuration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
-      propertyPath: numberOfCurrentTasks
-      value: 0
-      objectReference: {fileID: 581033909103194506}
+      propertyPath: progressBar
+      value: 
+      objectReference: {fileID: 2076721071}
     - target: {fileID: 3020004993363017906, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: m_Name
       value: Level Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4419079321454310740, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4419079321454310740, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
-      propertyPath: levelSelectScene
-      value: LevelSelect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

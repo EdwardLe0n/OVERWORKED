@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public float levelDuration = 3f;
     private float levelTimer = 0f; 
     public TextMeshProUGUI timerText;
+    public ProgressBar progressBar;
     public GameObject pauseUI;
 
     public GameObject winScreen;
@@ -55,7 +56,10 @@ public class LevelManager : MonoBehaviour
 
         // Sets the total number of tasks to the number of tasks that was found in the first call
         numberOfTotalTasks = numberOfCurrentTasks;
+        Debug.Log(numberOfTotalTasks);
 
+        // set max value of progress bar based on tasks
+        progressBar.SetMaxValue(3);
     }
 
     // Update is called once per frame
@@ -120,8 +124,11 @@ public class LevelManager : MonoBehaviour
     // Gets called when tasks are completed
     public void taskCompleted()
     {
-        // Increments the number of tasks in a level
+        // decrements the number of tasks in a level
         numberOfCurrentTasks -= 1f;
+
+        // increment completed tasks on progress bar
+        progressBar.IncrementValue();
 
         // Sanity check
         debugTotalTasks();

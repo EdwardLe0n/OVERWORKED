@@ -47,7 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelDuration: 3
   timerText: {fileID: 0}
+  progressBar: {fileID: 0}
   pauseUI: {fileID: 0}
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
   numberOfTotalTasks: 0
   numberOfCurrentTasks: 0
 --- !u!114 &4419079321454310740
@@ -62,6 +65,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765ade813e00bb6479a90a33a1cd8bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSelectScene: 
+  levelSelectScene: LevelSelect
   creditsScene: 
   settingsMenu: {fileID: 0}
