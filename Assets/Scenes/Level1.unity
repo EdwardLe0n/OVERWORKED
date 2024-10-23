@@ -3025,6 +3025,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4422184358909531324, guid: 318ad029108edef4c92b8a361d799526, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7455140502538952139, guid: 318ad029108edef4c92b8a361d799526, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3114,6 +3118,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 318ad029108edef4c92b8a361d799526, type: 3}
+--- !u!114 &1297387159019510608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5939016855826159729, guid: 318ad029108edef4c92b8a361d799526, type: 3}
+  m_PrefabInstance: {fileID: 1297387159019510607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b79eec5748761542a5457062bc7ba1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2716956620339376318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3899734590282210979, guid: c70b13f15936f4c4c8899ff28219f844, type: 3}
@@ -3186,7 +3201,19 @@ PrefabInstance:
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: progressBar
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 2076721071}
+=======
+      objectReference: {fileID: 1297387159019510608}
+    - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
+      propertyPath: levelDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
+      propertyPath: numberOfCurrentTasks
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 3020004993363017906, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: m_Name
       value: Level Manager

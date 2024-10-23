@@ -58,7 +58,10 @@ public class LevelManager : MonoBehaviour
         numberOfTotalTasks = numberOfCurrentTasks;
         Debug.Log(numberOfTotalTasks);
 
+<<<<<<< Updated upstream
         // set max value of progress bar based on tasks
+=======
+>>>>>>> Stashed changes
         progressBar.SetMaxValue(3);
     }
 
@@ -127,8 +130,12 @@ public class LevelManager : MonoBehaviour
         // decrements the number of tasks in a level
         numberOfCurrentTasks -= 1f;
 
+<<<<<<< Updated upstream
         // increment completed tasks on progress bar
         progressBar.IncrementValue();
+=======
+        progressBar.IncrementValue(); // fill progress bar when task completed
+>>>>>>> Stashed changes
 
         // Sanity check
         debugTotalTasks();
