@@ -531,7 +531,7 @@ MonoBehaviour:
   layerToLookFor:
     serializedVersion: 2
     m_Bits: 0
-  debug: 1
+  debug: 0
 --- !u!195 &8123439902115534922
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -586,6 +586,10 @@ MonoBehaviour:
   energizedMultiplier: 1.5
   neutralMultiplier: 1
   tiredMultiplier: 0.5
+  maxDistance: 7
+  minDistance: 3
+  maxInterval: 5
+  minInterval: 2
 --- !u!114 &-8978031508274763732
 MonoBehaviour:
   m_ObjectHideFlags: 0
