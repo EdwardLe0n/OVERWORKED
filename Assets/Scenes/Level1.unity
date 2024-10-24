@@ -4582,7 +4582,7 @@ PrefabInstance:
       objectReference: {fileID: 1297387159019510608}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: levelDuration
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: numberOfTotalTasks

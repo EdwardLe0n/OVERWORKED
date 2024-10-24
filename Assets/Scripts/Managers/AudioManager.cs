@@ -38,7 +38,8 @@ public class AudioManager : MonoBehaviour
         HumanDie.bonk += HumanDied;
     }
 
-    void OnDestroy(){
+    void OnDestroy()
+    {
         PillowGun.ShotGun -= PillowShot;
         Pillow.pillowHit -= PillowHit;
         Pickup.bonk -= PickupItem;
