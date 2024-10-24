@@ -59,6 +59,19 @@ public class InGameButton : MonoBehaviour
 
     }
 
+    public bool CanActivate()
+    {
+        if (usesActivation)
+        {
+            return activateEffect.CanActivate();
+        }
+        else
+        {
+            // Hard set to yes for now // solely for times sake
+            return true;
+        }
+    }
+
     private void spawnPickUpTemp()
     {
         GameObject clone = Instantiate(obj1);

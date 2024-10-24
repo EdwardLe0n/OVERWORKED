@@ -15,31 +15,38 @@ public class FaxMachineActivation : Activation
 
     public override void Activate()
     {
-        // check if the faxPlacingArea is empty
-        if(faxPlacingArea == null){
-            // don't do anything and quit
-            return;
-        }
 
         // reference item in the placing area
         GameObject placedItem = faxPlacingArea.currentPick;
-
-        if (placedItem == null)
-        {
-            return;
-        }
-
-        // check if item placed matched tag
-        if(!placedItem.CompareTag(matchTag))
-        {
-            // don't do anything and quit
-            return;
-        }
 
         // empty placing area variables
         faxPlacingArea.currentPick = null;
         faxPlacingArea.hasItem = false;
 
         Destroy(placedItem);
+    }
+
+    public override bool CanActivate()
+    {
+
+        // Error handling to make sure that a dead human exists on th fax machine, and can there fore be destroyed
+        if (faxPlacingArea != null)
+        {
+
+            GameObject placedItem = faxPlacingArea.currentPick;
+
+            if (placedItem != null)
+            {
+
+                if (placedItem.CompareTag(matchTag))
+                {
+                    return true;
+                }
+
+            }
+        }
+
+
+        return false;
     }
 }

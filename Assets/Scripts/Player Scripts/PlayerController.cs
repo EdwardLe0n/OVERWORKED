@@ -210,6 +210,11 @@ public class PlayerController : MonoBehaviour
                     Debug.Log(hitCollider.gameObject.name + " doesn't have the In Game Button Script!");
                     return -1;
                 }
+                else if (!hitCollider.gameObject.GetComponent<InGameButton>().CanActivate())
+                {
+                    Debug.Log(hitCollider.gameObject.name + " cannot activate at the moment!");
+                    return -1;
+                }
                 else if (hasItem)
                 {
                     Debug.Log("Careful " + gameObject.name+ "! You have an item in hand!");
