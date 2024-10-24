@@ -31,6 +31,7 @@ public class Pillow : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision){
+        Debug.Log("I hit " + collision.transform.name);
         pillowHit.Invoke();
         energy = collision.gameObject.GetComponent<Energy>();
         mood = collision.gameObject.GetComponent<Mood>();

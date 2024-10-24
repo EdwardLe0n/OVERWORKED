@@ -48,6 +48,8 @@ MonoBehaviour:
   levelDuration: 3
   timerText: {fileID: 0}
   pauseUI: {fileID: 0}
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
   numberOfTotalTasks: 0
   numberOfCurrentTasks: 0
 --- !u!114 &4419079321454310740

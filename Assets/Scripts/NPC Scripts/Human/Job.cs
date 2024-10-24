@@ -63,7 +63,7 @@ public class Job : MonoBehaviour
     }
 
     // returns the correct energy multiplier based on energy level
-    private float EnergyModifier(){
+    public float EnergyModifier(){
         if(states.isCoffeed){
             return energizedMultiplier;
         }

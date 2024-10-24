@@ -29,6 +29,9 @@ public class Energy : MonoBehaviour
     [Range(0,1)]
     public float tiredThreshold;
 
+    [Tooltip("% Time spent asleep with pillow gun")]
+    public float sleepTime;
+
     // 0 <= energy <= maxEnergy
     private float energy;
 
@@ -41,7 +44,11 @@ public class Energy : MonoBehaviour
     }
 
     public bool IsDead{
-        get { return energy <= 0;}
+        get { return energy <= 0; }
+    }
+
+    public float PercentEnergy{
+        get { return energy / maxEnergy; }
     }
 
     void Awake(){
@@ -75,7 +82,7 @@ public class Energy : MonoBehaviour
     }
 
     public IEnumerator Asleep(){
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(sleepTime);
         TurnOn();
     }
 

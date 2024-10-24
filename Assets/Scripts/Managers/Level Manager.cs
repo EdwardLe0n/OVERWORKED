@@ -11,15 +11,16 @@ public class LevelManager : MonoBehaviour
     public float levelDuration = 3f;
     private float levelTimer = 0f; 
     public TextMeshProUGUI timerText;
+    public static ProgressBar progressBar;
     public GameObject pauseUI;
 
     public GameObject winScreen;
     public GameObject loseScreen;
 
-    private bool isLevelCompleted;
+    public static bool isLevelCompleted;
 
     [Header("Tasks Values")]
-    public float numberOfTotalTasks;
+    public int numberOfTotalTasks;
     public float numberOfCurrentTasks = 0f;
 
     // Delegate handling
@@ -29,10 +30,11 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
 
-        debugTotalTasks();
+        //debugTotalTasks();
 
         numberOfCurrentTasks = 0;
 
+        checkTheLevel += resetCurrentTasksVal;
         // Adds the check tasks 
         checkTheLevel += checkTasks;
 
@@ -49,13 +51,15 @@ public class LevelManager : MonoBehaviour
         // fixes up veriables at the start
         isLevelCompleted = false;
 
+        checkTheLevel += debugTotalTasks;
+
         checkTheLevel();
 
-        debugTotalTasks();
+        progressBar = FindAnyObjectByType<ProgressBar>();
+        Debug.Log(progressBar);
 
-        // Sets the total number of tasks to the number of tasks that was found in the first call
-        numberOfTotalTasks = numberOfCurrentTasks;
-
+        progressBar.SetMaxValue(numberOfTotalTasks);
+        progressBar.CheckValue();
     }
 
     // Update is called once per frame
@@ -77,6 +81,10 @@ public class LevelManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space)) {
             TogglePauseMenu();
         }
+
+        if(isLevelCompleted) {
+            winScreen.SetActive(true);
+        }
     }
 
     // Updates the timer test every update except for when the pause menu is open
@@ -96,6 +104,12 @@ public class LevelManager : MonoBehaviour
         else {
             Time.timeScale = 1f;
         }
+    }
+
+    // sets the current tasks val to 0f
+    void resetCurrentTasksVal()
+    {
+        numberOfCurrentTasks = 0f;
     }
 
     // Notifies all current tsaks to contact the level manager
@@ -120,8 +134,10 @@ public class LevelManager : MonoBehaviour
     // Gets called when tasks are completed
     public void taskCompleted()
     {
-        // Increments the number of tasks in a level
+        // decrements the number of tasks in a level
         numberOfCurrentTasks -= 1f;
+
+        progressBar.IncrementValue(); // increment progress bar on task completion
 
         // Sanity check
         debugTotalTasks();
@@ -140,13 +156,14 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Tasks that still need to be completed: " + numberOfCurrentTasks);
     }
 
-    void LevelComplete()
+    public void LevelComplete()
     {
+        Debug.Log("level completed function");
         isLevelCompleted = true; // stops timer from running any further
         PlayerPrefs.SetInt("levelReached", CurrentLevelNumber+1);
         PlayerPrefs.Save();
 
-        winScreen.SetActive(true);
+        
         // TODO: add more level complete stuff and things
     }
 }
