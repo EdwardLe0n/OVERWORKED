@@ -44,7 +44,11 @@ public class Energy : MonoBehaviour
     }
 
     public bool IsDead{
-        get { return energy <= 0;}
+        get { return energy <= 0; }
+    }
+
+    public float PercentEnergy{
+        get { return energy / maxEnergy; }
     }
 
     void Awake(){
