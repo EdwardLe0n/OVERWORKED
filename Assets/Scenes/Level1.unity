@@ -1463,6 +1463,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1041896368112243762, guid: 7a710574649ebfb4384be048a98c88e3, type: 3}
   m_PrefabInstance: {fileID: 722588976}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &735555830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 666779429742289679, guid: cf591833784af5741b6f2a6005bcef4d, type: 3}
+  m_PrefabInstance: {fileID: 581033909103194504}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &740320322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3860,6 +3865,10 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1242870600}
+    - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
+      propertyPath: winScreen
+      value: 
+      objectReference: {fileID: 735555830}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: loseScreen
       value: 
