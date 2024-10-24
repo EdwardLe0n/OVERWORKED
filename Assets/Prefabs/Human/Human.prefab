@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4839245067513380481}
+  - component: {fileID: 300196393349198813}
   m_Layer: 0
   m_Name: Indicators
   m_TagString: Untagged
@@ -107,6 +108,20 @@ Transform:
   - {fileID: 1836662652253164586}
   m_Father: {fileID: 3852006058845783665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &300196393349198813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590522440052850821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc26e9db1ae3a224788cc4546d20d93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: {fileID: 273248652121462909}
+  img: {fileID: 3362142679185181958}
 --- !u!1 &2692456398678109481
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +338,7 @@ MonoBehaviour:
   happyModifier: 0
   neutralModifier: -1
   stressedModifier: -2
-  dyingModifier: -5
+  dyingModifier: -4
   moodEffect: 2
   energyRecharge: 0.05
 --- !u!114 &72754852805091384
@@ -355,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4da727fd905184fbe893fd5433288c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnergy: 300
+  maxEnergy: 100
   energizedThreshold: 0.75
   tiredThreshold: 0.25
   sleepTime: 10
