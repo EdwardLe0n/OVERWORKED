@@ -160,6 +160,7 @@ MonoBehaviour:
   spawnPos: {fileID: 3019017694334873451}
   obj1: {fileID: 0}
   obj2: {fileID: 0}
+  usesActivation: 1
 --- !u!114 &669141728054065478
 MonoBehaviour:
   m_ObjectHideFlags: 0

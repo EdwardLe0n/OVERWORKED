@@ -24,6 +24,11 @@ public class FaxMachineActivation : Activation
         // reference item in the placing area
         GameObject placedItem = faxPlacingArea.currentPick;
 
+        if (placedItem == null)
+        {
+            return;
+        }
+
         // check if item placed matched tag
         if(!placedItem.CompareTag(matchTag))
         {
