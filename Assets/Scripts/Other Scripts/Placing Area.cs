@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlacingArea : MonoBehaviour
 {
     public float type;
+    public int specialTableType;
 
     [Header("Current Item Variables")]
     public GameObject currentPick;
@@ -17,6 +18,7 @@ public class PlacingArea : MonoBehaviour
     public float targetTime = 3f;
 
     public Material tempMaterial;
+    public GameObject tempObject;
 
     public string debugType()
     {
@@ -45,12 +47,39 @@ public class PlacingArea : MonoBehaviour
             if (timeRunning >= targetTime)
             {
 
-                // temp line, make this a general do something function later
-                currentPick.gameObject.GetComponent<MeshRenderer>().material = tempMaterial;
+                specialTableFunct();
+                inProgress = false;
                 ResetTimer();
 
             }
 
+        }
+    }
+
+    public void specialTableFunct()
+    {
+        switch (specialTableType)
+        {
+            // Drink machine
+            case 1:
+                // stores a reference to the old item
+                GameObject oldItem = currentPick;
+
+                // drops the old item off of the placing area
+                currentPick.GetComponent<Pickup>().ItemDropped();
+
+                // Creates a new object based off of the temp object given
+                currentPick = Instantiate(tempObject);
+
+                // references the pick up script on the new object to let it now that it has been picked up
+                currentPick.GetComponent<Pickup>().ItemGrabbed(this.gameObject);
+
+                // Destroys the old object
+                Destroy(oldItem);
+                break;
+            default:
+                currentPick.gameObject.GetComponent<MeshRenderer>().material = tempMaterial;
+                break;
         }
     }
 
