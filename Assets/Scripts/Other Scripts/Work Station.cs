@@ -12,6 +12,9 @@ public class WorkStation : MonoBehaviour
     // Lets humans know of the ways they can walk up to a station
     public int interactOrient;
 
+    //Bool to track if the task is currently available
+    public bool taskAvailability = false;
+
     // Amount of time a task will take
     public float taskTime;
     // Current progress of a given task
@@ -32,6 +35,12 @@ public class WorkStation : MonoBehaviour
         // connects to the level manager check up
         LevelManager.checkTheLevel += sendInfo;
 
+    }
+
+    private void Start(){
+        if(taskType == 3){
+            StartCoroutine(DirtyBathroom());
+        }
     }
 
     // Increments the task dependent on the given float
@@ -67,11 +76,23 @@ public class WorkStation : MonoBehaviour
     {
         return taskCompleted;
     }
+
+    // Dimple getter for task status
+    public bool getAvailability()
+    {
+        return taskAvailability;
+    }
     
     // Sends info about task completion over to the level manager
     public void sendInfo()
     {
         levelMan.GetComponent<LevelManager>().recieveTaskInfo();
+    }
+
+    public IEnumerator DirtyBathroom(){
+        float time = Random.Range(10, 51);
+        yield return new WaitForSeconds(time);
+        taskAvailability = true;
     }
 
 }

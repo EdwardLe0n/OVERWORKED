@@ -52,7 +52,7 @@ public class Job : MonoBehaviour
 
         // if the human is classified as working, it will let the job station know that it's currently getting completed
         // by a human with energy dependent on their status
-        if (IsWorking() && !jobStation.GetComponent<WorkStation>().getStatus())
+        if (IsWorking() && !jobStation.GetComponent<WorkStation>().getStatus() && jobStation.GetComponent<WorkStation>().getAvailability())
         {
             jobStation.GetComponent<WorkStation>().attemptingTask(jobSpeed * EnergyModifier() * Time.deltaTime);
         }
