@@ -330,7 +330,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   listOfPossibleColliders: []
-  coffeeTime: 0
+  coffeeTime: 30
 --- !u!1001 &6088747678330987983
 PrefabInstance:
   m_ObjectHideFlags: 0
