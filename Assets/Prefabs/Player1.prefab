@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 5460442820753418795}
   - component: {fileID: 8214213565686407278}
   - component: {fileID: 8928350910597339212}
+  - component: {fileID: 2678929310410931196}
+  - component: {fileID: 5028031896947717093}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -200,6 +202,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ffca1a57-d11f-4fb6-9dbf-a97aad681211
     m_ActionName: 'Gameplay/Sprint2[/Keyboard/rightShift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a7361b01-f5c3-425c-8ee6-a12bf5eacec0
+    m_ActionName: 'Gameplay/PickUp1 (default)[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 58f32f3e-1f65-4164-bfa0-84136d49b491
+    m_ActionName: 'Gameplay/PickUp2 (default)[/Keyboard/u]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: adc96bd2-7a16-4a04-8b24-c5c243373f7d
+    m_ActionName: 'Gameplay/Sprint1 (default)[/Keyboard/leftShift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb3780e9-7097-478c-8549-b375d67b9127
+    m_ActionName: 'Gameplay/Sprint2 (default)[/Keyboard/rightShift]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -263,6 +281,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerWalking: {fileID: 7911591737914862162}
+--- !u!135 &2678929310410931196
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847843120916770516}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &5028031896947717093
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847843120916770516}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6427750026450217461
 GameObject:
   m_ObjectHideFlags: 0

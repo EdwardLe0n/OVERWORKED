@@ -2935,6 +2935,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2768974245072986563, guid: 7e55c6d4d2722f44884852b1608c1bd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8975974780094990852, guid: 7e55c6d4d2722f44884852b1608c1bd3, type: 3}
       propertyPath: m_Name
       value: HR Spawn Button Variant
