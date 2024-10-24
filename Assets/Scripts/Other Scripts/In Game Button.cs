@@ -18,6 +18,8 @@ public class InGameButton : MonoBehaviour
     public GameObject obj1;
     public GameObject obj2;
 
+    public bool usesActivation;
+
     public string debugType()
     {
         switch (type)
@@ -37,20 +39,37 @@ public class InGameButton : MonoBehaviour
 
     public void onTouch()
     {
-        switch (id) 
+        if (usesActivation)
         {
-            case 1:
-                spawnPickUpTemp();
-                break;
-            case 2:
-                activateEffect.Activate();
-                break;
-            default:
-                Debug.Log(gameObject.name + " has a bad id!!!");
-                break;
-        
+            activateEffect.Activate();
+        }
+        else
+        {
+            switch (id)
+            {
+                case 1:
+                    spawnPickUpTemp();
+                    break;
+                default:
+                    Debug.Log(gameObject.name + " has a bad id!!!");
+                    break;
+
+            }
         }
 
+    }
+
+    public bool CanActivate()
+    {
+        if (usesActivation)
+        {
+            return activateEffect.CanActivate();
+        }
+        else
+        {
+            // Hard set to yes for now // solely for times sake
+            return true;
+        }
     }
 
     private void spawnPickUpTemp()
