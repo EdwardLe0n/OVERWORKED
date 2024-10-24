@@ -233,7 +233,7 @@ MonoBehaviour:
   idleLoss: -0.01
   workModifier: -0.02
   workEffect: 2
-  carryModifier: -0.05
+  carryModifier: -0.025
   moodRecharge: 0.1
 --- !u!114 &273248652121462909
 MonoBehaviour:
@@ -250,6 +250,7 @@ MonoBehaviour:
   maxEnergy: 300
   energizedThreshold: 0.75
   tiredThreshold: 0.25
+  sleepTime: 10
 --- !u!114 &2291303865167612056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +266,7 @@ MonoBehaviour:
   moodStart: 1
   happyThreshold: 0.5
   stressedThreshold: -0.5
+  sleepTime: 10
 --- !u!114 &7954828690012559629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +284,7 @@ MonoBehaviour:
   layerToLookFor:
     serializedVersion: 2
     m_Bits: 0
-  debug: 0
+  debug: 1
 --- !u!195 &8123439902115534922
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -383,7 +385,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -415,7 +417,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

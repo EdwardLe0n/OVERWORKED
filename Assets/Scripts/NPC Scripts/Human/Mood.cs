@@ -29,6 +29,9 @@ public class Mood : MonoBehaviour
     [Range(-1,1)]
     public float stressedThreshold;
 
+    [Tooltip("% Time spent asleep with pillow gun")]
+    public float sleepTime;
+
     // -1 <= mood <= 1
     private float mood;
     private HumanStates states;
@@ -83,7 +86,7 @@ public class Mood : MonoBehaviour
     }
 
     public IEnumerator Asleep(){
-        yield return 5f;
+        yield return new WaitForSeconds(sleepTime);
         TurnOn();
     }
 
