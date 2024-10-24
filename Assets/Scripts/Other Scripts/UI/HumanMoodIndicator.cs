@@ -29,6 +29,16 @@ public class HumanMoodIndicator : MonoBehaviour
     public HumanStates states;
 
     void Update(){
+        if(states.isCoffeed){
+            ChangeSprite(stressed);
+            return;
+        }
+
+        if(states.isCatted){
+            ChangeSprite(happy);
+            return;
+        }
+
         if(states.IsHappy){
             ChangeSprite(happy);
             return;
