@@ -1597,42 +1597,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 915266350}
     m_Modifications:
-    - target: {fileID: 296640544133827877, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2134876928911573006, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2768149291742954567, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4022616556121296193, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4022616556121296193, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4022616556121296193, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5973337360509169107, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6251371779747464756, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6251371779747464756, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7588809911513737620, guid: f60517508f4de9745992b92bc5604554, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1716,30 +1680,6 @@ PrefabInstance:
     - target: {fileID: 8021882577767243617, guid: f60517508f4de9745992b92bc5604554, type: 3}
       propertyPath: m_Name
       value: Settings Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8021882577767243617, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876184084740692651, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8876184084740692651, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084531020654278078, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084531020654278078, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084531020654278078, guid: f60517508f4de9745992b92bc5604554, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
