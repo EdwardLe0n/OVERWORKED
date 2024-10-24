@@ -23,6 +23,8 @@ public class HumanEnergyBar : MonoBehaviour
 
         // handles the look towards for the entire transform
         Vector3 lookPos = new Vector3(transform.position.x, transform.position.y+1, transform.position.z-1);
+        transform.localPosition = new Vector3(0, 0, 0);
+        transform.position += new Vector3(0, 2.5f, -2);
         transform.LookAt(lookPos);
     }
 }

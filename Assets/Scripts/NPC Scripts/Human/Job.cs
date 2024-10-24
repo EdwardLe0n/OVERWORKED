@@ -95,6 +95,10 @@ public class Job : MonoBehaviour
     private void Wander(){
         Vector3 randomPos = RandomPos();
 
+        if(!agent.enabled){
+            return;
+        }
+
         agent.SetDestination(randomPos);
 
         wanderTimer = Random.Range(minInterval, maxInterval);

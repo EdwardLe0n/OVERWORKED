@@ -18,6 +18,12 @@ public class HumanMoodIndicator : MonoBehaviour
     [Tooltip("Image to display while dying. Do not leave empty!")]
     public Sprite dying;
 
+    [Tooltip("Image to display while on coffee. Do not leave empty!")]
+    public Sprite wired;
+
+    [Tooltip("Image to display while catted. Do not leave empty!")]
+    public Sprite cat;
+
     [Header("Unity Set Up")]
     [Tooltip("Image of the mood holder. Don't change.")]
     public Image moodHolder;
@@ -30,12 +36,12 @@ public class HumanMoodIndicator : MonoBehaviour
 
     void Update(){
         if(states.isCoffeed){
-            ChangeSprite(stressed);
+            ChangeSprite(wired);
             return;
         }
 
         if(states.isCatted){
-            ChangeSprite(happy);
+            ChangeSprite(cat);
             return;
         }
 
