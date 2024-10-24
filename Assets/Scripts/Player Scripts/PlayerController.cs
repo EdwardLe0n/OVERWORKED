@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (!hitCollider.gameObject.GetComponent<PlacingArea>().hasItem && !hasItem)
                 {
-                    Debug.Log("Neither the table or the playe have an item!");
+                    Debug.Log("Neither the table or the player have an item!");
                     return -1;
                 }
                 break;
@@ -380,6 +380,12 @@ public class PlayerController : MonoBehaviour
                 // Will trigger when a player is placing an element down on a placing area
                 if (hasItem)
                 {
+                   if (currentPick.gameObject.tag == "Human")
+                    {
+                        Debug.Log("You can't place humans on tables!");
+                        return;
+                    }
+
                     // Refers to the player element current pick to get the game object
                     grabber = currentPick.GetComponent<Pickup>();
 
