@@ -66,7 +66,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ca20b17a77668d648853e016c971cab2, type: 3}
-  m_Type: 3
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4839245067513380481}
   - component: {fileID: 300196393349198813}
+  - component: {fileID: 3889984717120556246}
   m_Layer: 0
   m_Name: Indicators
   m_TagString: Untagged
@@ -197,6 +198,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: {fileID: 273248652121462909}
   img: {fileID: 3362142679185181958}
+--- !u!114 &3889984717120556246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590522440052850821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13407374c6fdba5448523d0519dff217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happy: {fileID: 21300000, guid: ca20b17a77668d648853e016c971cab2, type: 3}
+  stressed: {fileID: 21300000, guid: cb91fbf410b2da7459753f1cd7c3a6e1, type: 3}
+  dying: {fileID: 21300000, guid: a2b5de0e5599af84cace34809dd0a5de, type: 3}
+  moodHolder: {fileID: 8269988640426844998}
+  image: {fileID: 5081356330137849930}
+  states: {fileID: 5810331154769337038}
 --- !u!1 &2692456398678109481
 GameObject:
   m_ObjectHideFlags: 0
