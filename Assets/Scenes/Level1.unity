@@ -3601,6 +3601,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 666779429742289679, guid: cf591833784af5741b6f2a6005bcef4d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1233680669254191845, guid: cf591833784af5741b6f2a6005bcef4d, type: 3}
       propertyPath: m_Name
       value: Win/Lose UI
@@ -3689,6 +3693,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5185129552195848408, guid: cf591833784af5741b6f2a6005bcef4d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 5669969014777104158, guid: cf591833784af5741b6f2a6005bcef4d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3707,6 +3715,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1136960905380518428, guid: cf591833784af5741b6f2a6005bcef4d, type: 3}
   m_PrefabInstance: {fileID: 581033909103194504}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &581033909103194506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 666779429742289679, guid: cf591833784af5741b6f2a6005bcef4d, type: 3}
+  m_PrefabInstance: {fileID: 581033909103194504}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1297387159019510607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3715,6 +3728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4629071562758564998, guid: 318ad029108edef4c92b8a361d799526, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7455140502538952139, guid: 318ad029108edef4c92b8a361d799526, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3797,13 +3814,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7823305881912268579, guid: 318ad029108edef4c92b8a361d799526, type: 3}
       propertyPath: m_Name
-      value: Timer Canvas
+      value: Top UI Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 318ad029108edef4c92b8a361d799526, type: 3}
+--- !u!114 &1297387159019510608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2984240562405073640, guid: 318ad029108edef4c92b8a361d799526, type: 3}
+  m_PrefabInstance: {fileID: 1297387159019510607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b79eec5748761542a5457062bc7ba1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2716956620339376318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3899734590282210979, guid: c70b13f15936f4c4c8899ff28219f844, type: 3}
@@ -3868,14 +3896,22 @@ PrefabInstance:
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: winScreen
       value: 
-      objectReference: {fileID: 735555830}
+      objectReference: {fileID: 581033909103194506}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: loseScreen
       value: 
       objectReference: {fileID: 581033909103194505}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
+      propertyPath: progressBar
+      value: 
+      objectReference: {fileID: 1297387159019510608}
+    - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: levelDuration
-      value: 1.03
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
+      propertyPath: numberOfTotalTasks
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: numberOfCurrentTasks
