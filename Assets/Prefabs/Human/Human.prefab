@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4da727fd905184fbe893fd5433288c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnergy: 100
+  maxEnergy: 300
   energizedThreshold: 0.75
   tiredThreshold: 0.25
   sleepTime: 10
