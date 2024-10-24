@@ -31,6 +31,10 @@ public class HumanDie : MonoBehaviour
     // keeps note of if death has already been triggered.
     private bool triggeredDie;
 
+    public delegate void HumanBonked();
+    public static event HumanBonked bonk;
+    public static event HumanBonked died;
+
     void Awake(){
         states = GetComponent<HumanStates>();
         pickup = GetComponent<Pickup>();
@@ -46,9 +50,15 @@ public class HumanDie : MonoBehaviour
         // if the human dies, start dying function
         if(states.IsDead){
             Debug.Log(transform.name + " died");
+            died.Invoke();
             StartCoroutine(Die());
         }
     }
+
+    void OnTriggerEnter(Collider other){
+        bonk.Invoke();
+    }
+
 
     private IEnumerator Die(){
         triggeredDie = true;

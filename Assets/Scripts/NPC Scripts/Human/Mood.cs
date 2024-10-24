@@ -83,7 +83,7 @@ public class Mood : MonoBehaviour
     }
 
     public IEnumerator Asleep(){
-        yield return 5f;
+        yield return new WaitForSeconds(5f);
         TurnOn();
     }
 

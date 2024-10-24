@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource pillowShoot;
     public AudioSource pillowHit;
     public AudioSource itemBonked;
+    public AudioSource humanBonked;
+    public AudioSource humanDied;
 
     private void Awake()
     {
@@ -32,12 +34,16 @@ public class AudioManager : MonoBehaviour
         PillowGun.ShotGun += PillowShot;
         Pillow.pillowHit += PillowHit;
         Pickup.bonk += PickupItem;
+        HumanDie.bonk += HumanItem;
+        HumanDie.bonk += HumanDied;
     }
 
     void OnDestroy(){
         PillowGun.ShotGun -= PillowShot;
         Pillow.pillowHit -= PillowHit;
         Pickup.bonk -= PickupItem;
+        HumanDie.bonk -= HumanItem;
+        HumanDie.bonk -= HumanDied;
     }
 
     public void PillowShot(){
@@ -51,5 +57,13 @@ public class AudioManager : MonoBehaviour
 
     public void PickupItem(){
         itemBonked.Play();
+    }
+
+    public void HumanItem(){
+        humanBonked.Play();
+    }
+
+    public void HumanDied(){
+        humanDied.Play();
     }
 }
