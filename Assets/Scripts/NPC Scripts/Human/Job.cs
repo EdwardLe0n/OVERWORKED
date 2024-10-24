@@ -93,6 +93,11 @@ public class Job : MonoBehaviour
     }
 
     private void Wander(){
+        // disable wander while recharging
+        if(states.isRechargingEnergy || states.isRechargingMood){
+            return;
+        }
+
         Vector3 randomPos = RandomPos();
 
         if(!agent.enabled){

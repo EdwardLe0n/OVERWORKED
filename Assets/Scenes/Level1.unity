@@ -1586,6 +1586,10 @@ PrefabInstance:
       propertyPath: taskTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7554102758585972741, guid: c70b13f15936f4c4c8899ff28219f844, type: 3}
+      propertyPath: taskAvailability
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4671,6 +4675,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7554102758585972741, guid: c70b13f15936f4c4c8899ff28219f844, type: 3}
       propertyPath: taskTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554102758585972741, guid: c70b13f15936f4c4c8899ff28219f844, type: 3}
+      propertyPath: taskAvailability
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
