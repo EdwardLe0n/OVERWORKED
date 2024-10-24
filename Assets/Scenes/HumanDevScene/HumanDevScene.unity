@@ -1105,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7163738891658352480, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
       propertyPath: moodEffect
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7954828690012559629, guid: 404cfe5002bb7464caf00bb777a30dee, type: 3}
       propertyPath: testJob
