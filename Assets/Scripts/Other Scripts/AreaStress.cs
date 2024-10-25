@@ -33,7 +33,7 @@ public class AreaStress : MonoBehaviour
 
             factor = Vector3.Distance(origin.position, col.transform.position) / radius;
             factor = 1 - factor;
-            Debug.Log(col.name + ": " + factor);
+            // Debug.Log(col.name + ": " + factor);
 
             MoodHandler mood = col.GetComponent<MoodHandler>();
             mood.ChangeMood(rate * factor * Time.deltaTime);
