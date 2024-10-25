@@ -44,6 +44,8 @@ public class WorkStation : MonoBehaviour
     public void Update(){
         if(taskAvailability){
             ReadyIndicator.SetActive(true);
+        } else {
+            ReadyIndicator.SetActive(false);
         }
     }
 
@@ -73,6 +75,7 @@ public class WorkStation : MonoBehaviour
         if (taskProgress >= taskTime)
         {
             taskCompleted = true;
+            taskAvailability = false;
             done.Invoke();
 
             // Sanity Check
