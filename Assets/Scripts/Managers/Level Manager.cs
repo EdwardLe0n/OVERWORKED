@@ -64,6 +64,11 @@ public class LevelManager : MonoBehaviour
         progressBar.CheckValue();
     }
 
+    private void OnDestroy(){
+        checkTheLevel -= debugTotalTasks;
+        checkTheLevel -= resetCurrentTasksVal;
+        checkTheLevel -= checkTasks;
+    }
     // Update is called once per frame
     void Update()
     {

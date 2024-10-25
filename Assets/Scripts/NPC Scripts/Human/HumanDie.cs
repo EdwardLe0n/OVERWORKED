@@ -50,12 +50,11 @@ public class HumanDie : MonoBehaviour
         // if the human dies, start dying function
         if(states.IsDead){
             Debug.Log(transform.name + " died");
-            died.Invoke();
             StartCoroutine(Die());
         }
     }
 
-    void OnTriggerEnter(Collider other){
+    void OnCollisionEnter(Collision collision){
         bonk.Invoke();
     }
 
@@ -80,6 +79,7 @@ public class HumanDie : MonoBehaviour
 
         // transform references transform this script is on
         Instantiate(prefab, location.position, location.rotation);
+        died.Invoke();
 
         // destroy self
         Destroy(transform.gameObject);

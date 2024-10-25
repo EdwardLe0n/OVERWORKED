@@ -24,6 +24,10 @@ public class WorkStation : MonoBehaviour
     public bool taskCompleted = false;
 
     public GameObject levelMan;
+    public GameObject ReadyIndicator;
+
+    public delegate void TaskComplete();
+    public static event TaskComplete done;
 
     // Resets vars just in case
     private void Awake()
@@ -35,6 +39,18 @@ public class WorkStation : MonoBehaviour
         // connects to the level manager check up
         LevelManager.checkTheLevel += sendInfo;
 
+    }
+
+    public void Update(){
+        if(taskAvailability){
+            ReadyIndicator.SetActive(true);
+        } else {
+            ReadyIndicator.SetActive(false);
+        }
+    }
+
+    private void OnDestroy(){
+        LevelManager.checkTheLevel -= sendInfo;
     }
 
     private void Start(){
@@ -59,6 +75,8 @@ public class WorkStation : MonoBehaviour
         if (taskProgress >= taskTime)
         {
             taskCompleted = true;
+            taskAvailability = false;
+            done.Invoke();
 
             // Sanity Check
             Debug.Log("Task has been completed!");
