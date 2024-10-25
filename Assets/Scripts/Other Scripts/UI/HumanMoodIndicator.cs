@@ -12,6 +12,9 @@ public class HumanMoodIndicator : MonoBehaviour
     [Tooltip("Image to display while happy. Do not leave empty!")]
     public Sprite happy;
 
+    [Tooltip("Image to display while content. Do not leave empty!")]
+    public Sprite content;
+
     [Tooltip("Image to display while stressed. Do not leave empty!")]
     public Sprite stressed;
 
@@ -34,35 +37,35 @@ public class HumanMoodIndicator : MonoBehaviour
     [Tooltip("Human's state component. Do not change.")]
     public HumanStates states;
 
+    private bool isVisible;
+
+    public void SetVisible(bool v){
+        isVisible = v;
+    }
+
     void Update(){
         if(states.isCoffeed){
             ChangeSprite(wired);
-            return;
         }
-
-        if(states.isCatted){
+        else if(states.isCatted){
             ChangeSprite(cat);
-            return;
         }
-
-        if(states.IsHappy){
+        else if(states.IsHappy){
             ChangeSprite(happy);
-            return;
         }
-
-        if(states.IsDying){
+        else if(states.IsDying){
             ChangeSprite(dying);
-            return;
         }
-
-        if(states.IsStressed){
+        else if(states.IsStressed){
             ChangeSprite(stressed);
-            return;
+        }else{
+            ChangeSprite(content);
         }
 
-        // only ever gets here if in the neutral state
-        moodHolder.enabled = false;
-        image.enabled = false;
+        moodHolder.enabled = isVisible;
+        image.enabled = isVisible;
+
+        isVisible = false;
     }
 
     private void ChangeSprite(Sprite sprite){

@@ -159,8 +159,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4839245067513380481}
-  - component: {fileID: 300196393349198813}
-  - component: {fileID: 3889984717120556246}
   m_Layer: 0
   m_Name: Indicators
   m_TagString: Untagged
@@ -184,70 +182,6 @@ Transform:
   - {fileID: 1836662652253164586}
   m_Father: {fileID: 3852006058845783665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &300196393349198813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2590522440052850821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc26e9db1ae3a224788cc4546d20d93e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  energy: {fileID: 273248652121462909}
-  img: {fileID: 3362142679185181958}
-  energyBarColors:
-    serializedVersion: 2
-    key0: {r: 0.39215687, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0, b: 0, a: 1}
-    key2: {r: 1, g: 1, b: 0, a: 0}
-    key3: {r: 1, g: 1, b: 0.2117647, a: 0}
-    key4: {r: 0, g: 1, b: 0, a: 0}
-    key5: {r: 0, g: 1, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 655
-    ctime1: 16384
-    ctime2: 19661
-    ctime3: 49151
-    ctime4: 52428
-    ctime5: 65535
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 6
-    m_NumAlphaKeys: 2
---- !u!114 &3889984717120556246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2590522440052850821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13407374c6fdba5448523d0519dff217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  happy: {fileID: 21300000, guid: ca20b17a77668d648853e016c971cab2, type: 3}
-  stressed: {fileID: 21300000, guid: cb91fbf410b2da7459753f1cd7c3a6e1, type: 3}
-  dying: {fileID: 21300000, guid: a2b5de0e5599af84cace34809dd0a5de, type: 3}
-  wired: {fileID: 21300000, guid: 78ae2b2e059219b43b1a760ee7e3a5f9, type: 3}
-  cat: {fileID: 21300000, guid: 6cbce96cc9ab48d43a98d145e969e054, type: 3}
-  moodHolder: {fileID: 8269988640426844998}
-  image: {fileID: 5081356330137849930}
-  states: {fileID: 5810331154769337038}
 --- !u!1 &2692456398678109481
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +356,8 @@ GameObject:
   - component: {fileID: 8156217521483909332}
   - component: {fileID: 4536722505092363603}
   - component: {fileID: 8852658332763383810}
+  - component: {fileID: 5913307457201307311}
+  - component: {fileID: 2232369980798120229}
   m_Layer: 7
   m_Name: Human
   m_TagString: Human
@@ -695,6 +631,73 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &5913307457201307311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020551123310197398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc26e9db1ae3a224788cc4546d20d93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  container: {fileID: 4839245067513380481}
+  energy: {fileID: 273248652121462909}
+  holder: {fileID: 4137761944311640365}
+  img: {fileID: 3362142679185181958}
+  energyBarColors:
+    serializedVersion: 2
+    key0: {r: 0.39215687, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
+    key2: {r: 1, g: 1, b: 0, a: 0}
+    key3: {r: 1, g: 1, b: 0.2117647, a: 0}
+    key4: {r: 0, g: 1, b: 0, a: 0}
+    key5: {r: 0, g: 1, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 655
+    ctime1: 16384
+    ctime2: 19661
+    ctime3: 49151
+    ctime4: 52428
+    ctime5: 65535
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 6
+    m_NumAlphaKeys: 2
+--- !u!114 &2232369980798120229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4020551123310197398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13407374c6fdba5448523d0519dff217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happy: {fileID: 21300000, guid: ca20b17a77668d648853e016c971cab2, type: 3}
+  content: {fileID: 21300000, guid: 4fb59e1267c2c2a4e82f296ed91bfce3, type: 3}
+  stressed: {fileID: 21300000, guid: cb91fbf410b2da7459753f1cd7c3a6e1, type: 3}
+  dying: {fileID: 21300000, guid: a2b5de0e5599af84cace34809dd0a5de, type: 3}
+  wired: {fileID: 21300000, guid: 78ae2b2e059219b43b1a760ee7e3a5f9, type: 3}
+  cat: {fileID: 21300000, guid: 6cbce96cc9ab48d43a98d145e969e054, type: 3}
+  moodHolder: {fileID: 8269988640426844998}
+  image: {fileID: 5081356330137849930}
+  states: {fileID: 5810331154769337038}
 --- !u!1 &6090347852909311153
 GameObject:
   m_ObjectHideFlags: 0
