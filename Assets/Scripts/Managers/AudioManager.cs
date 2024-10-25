@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource itemBonked;
     public AudioSource humanBonked;
     public AudioSource humanDied;
+    public AudioSource taskComplete;
 
     private void Awake()
     {
@@ -35,7 +36,8 @@ public class AudioManager : MonoBehaviour
         Pillow.pillowHit += PillowHit;
         Pickup.bonk += PickupItem;
         HumanDie.bonk += HumanItem;
-        HumanDie.bonk += HumanDied;
+        HumanDie.died += HumanDied;
+        WorkStation.done += TaskComplete;
     }
 
     void OnDestroy(){
@@ -43,7 +45,8 @@ public class AudioManager : MonoBehaviour
         Pillow.pillowHit -= PillowHit;
         Pickup.bonk -= PickupItem;
         HumanDie.bonk -= HumanItem;
-        HumanDie.bonk -= HumanDied;
+        HumanDie.died -= HumanDied;
+        WorkStation.done -= TaskComplete;
     }
 
     public void PillowShot(){
@@ -65,5 +68,9 @@ public class AudioManager : MonoBehaviour
 
     public void HumanDied(){
         humanDied.Play();
+    }
+
+    public void TaskComplete(){
+        taskComplete.Play();
     }
 }

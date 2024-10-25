@@ -53,7 +53,11 @@ public class Pickup : MonoBehaviour
 
     void Update(){
         if(Pucked){
-            transform.position = new Vector3(currentHolder.transform.position.x, currentHolder.transform.position.y + 1, currentHolder.transform.position.z);
+            if(gameObject.GetComponent<PillowGun>() != null){
+                transform.position = new Vector3(currentHolder.transform.position.x, currentHolder.transform.position.y + .25f, currentHolder.transform.position.z);
+            } else {
+                transform.position = new Vector3(currentHolder.transform.position.x, currentHolder.transform.position.y + 1, currentHolder.transform.position.z);
+            }
             transform.rotation = currentHolder.transform.rotation; //sets position and rotation to be with the holder.
         }
         if(!currentlyHeld){
