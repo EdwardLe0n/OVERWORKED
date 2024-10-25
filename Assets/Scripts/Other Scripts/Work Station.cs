@@ -24,6 +24,7 @@ public class WorkStation : MonoBehaviour
     public bool taskCompleted = false;
 
     public GameObject levelMan;
+    public GameObject ReadyIndicator;
 
     public delegate void TaskComplete();
     public static event TaskComplete done;
@@ -38,6 +39,12 @@ public class WorkStation : MonoBehaviour
         // connects to the level manager check up
         LevelManager.checkTheLevel += sendInfo;
 
+    }
+
+    public void Update(){
+        if(taskAvailability){
+            ReadyIndicator.SetActive(true);
+        }
     }
 
     private void OnDestroy(){
