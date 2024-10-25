@@ -40,7 +40,8 @@ public class AudioManager : MonoBehaviour
         WorkStation.done += TaskComplete;
     }
 
-    void OnDestroy(){
+    void OnDestroy()
+    {
         PillowGun.ShotGun -= PillowShot;
         Pillow.pillowHit -= PillowHit;
         Pickup.bonk -= PickupItem;

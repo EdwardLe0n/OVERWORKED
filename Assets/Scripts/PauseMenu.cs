@@ -13,8 +13,8 @@ public class PauseMenu : MonoBehaviour
         settingsUI.SetActive(!settingsUI.activeSelf);
     }
 
-    public void ReturnToMainMenu()
+    public void ExitLevel()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("LevelSelect");
     }
 }

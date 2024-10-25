@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     public GameObject loseScreen;
 
     public static bool isLevelCompleted;
+    public static bool isLevelWon;
 
     [Header("Tasks Values")]
     public int numberOfTotalTasks;
@@ -50,6 +51,7 @@ public class LevelManager : MonoBehaviour
 
         // fixes up veriables at the start
         isLevelCompleted = false;
+        isLevelWon = false;
 
         checkTheLevel += debugTotalTasks;
 
@@ -87,7 +89,7 @@ public class LevelManager : MonoBehaviour
             TogglePauseMenu();
         }
 
-        if(isLevelCompleted) {
+        if(isLevelCompleted && isLevelWon) {
             winScreen.SetActive(true);
         }
     }
@@ -165,6 +167,7 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("level completed function");
         isLevelCompleted = true; // stops timer from running any further
+        isLevelWon = true; // flag for winning since using isLevelCompleted for both win or lose conditions
         PlayerPrefs.SetInt("levelReached", CurrentLevelNumber+1);
         PlayerPrefs.Save();
 
