@@ -13,6 +13,7 @@ public class PillowGun : Interactable
     public override void UseItem()
     {
         Debug.Log("Pillow Gun");
+
         Instantiate(Pillow, spawnPoint.transform.position, transform.rotation);
         ShotGun.Invoke();
     }
