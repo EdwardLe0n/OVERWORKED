@@ -2325,6 +2325,17 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &1072428884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 548662894703597329, guid: 318ad029108edef4c92b8a361d799526, type: 3}
+  m_PrefabInstance: {fileID: 1297387159019510607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1092769793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2653,17 +2664,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2308651093551422002, guid: 13bd5e9373823074d91bb2df04445bbe, type: 3}
   m_PrefabInstance: {fileID: 186624133478317698}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1242870600 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3628485454507052488, guid: 318ad029108edef4c92b8a361d799526, type: 3}
-  m_PrefabInstance: {fileID: 1297387159019510607}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1345946372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3831618266871117556, guid: f89d74446aaef834eb5f2162118359fb, type: 3}
@@ -4555,7 +4555,7 @@ PrefabInstance:
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: timerText
       value: 
-      objectReference: {fileID: 1242870600}
+      objectReference: {fileID: 1072428884}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: winScreen
       value: 
@@ -4570,7 +4570,7 @@ PrefabInstance:
       objectReference: {fileID: 1297387159019510608}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: levelDuration
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: numberOfTotalTasks
