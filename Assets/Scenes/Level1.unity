@@ -4134,10 +4134,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 577562816}
-    - target: {fileID: 3035597695510288429, guid: cf591833784af5741b6f2a6005bcef4d, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4632601635689489940, guid: cf591833784af5741b6f2a6005bcef4d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
