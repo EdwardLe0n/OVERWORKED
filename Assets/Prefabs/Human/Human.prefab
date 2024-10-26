@@ -468,7 +468,7 @@ MonoBehaviour:
   radiusCheck: 0.5
   layerToLookFor:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   debug: 0
 --- !u!195 &8123439902115534922
 NavMeshAgent:
