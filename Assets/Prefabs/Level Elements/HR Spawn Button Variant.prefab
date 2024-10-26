@@ -60,6 +60,18 @@ PrefabInstance:
       propertyPath: type
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2406212781667684167, guid: c0ed42fb725ae5e4793cdbc9afdba88d, type: 3}
+      propertyPath: cdScale
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2406212781667684167, guid: c0ed42fb725ae5e4793cdbc9afdba88d, type: 3}
+      propertyPath: cooldown
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2406212781667684167, guid: c0ed42fb725ae5e4793cdbc9afdba88d, type: 3}
+      propertyPath: spawnLimit
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2448151982424763082, guid: c0ed42fb725ae5e4793cdbc9afdba88d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
