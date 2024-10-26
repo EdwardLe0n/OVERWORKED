@@ -56,6 +56,8 @@ public class WorkStation : MonoBehaviour
     private void Start(){
         if(taskType == 3){
             StartCoroutine(DirtyBathroom());
+        } else if (taskType == 1){
+            StartCoroutine(Customer());
         }
     }
 
@@ -109,6 +111,12 @@ public class WorkStation : MonoBehaviour
 
     public IEnumerator DirtyBathroom(){
         float time = Random.Range(10, 51);
+        yield return new WaitForSeconds(time);
+        taskAvailability = true;
+    }
+
+    public IEnumerator Customer(){
+        float time = Random.Range(20, 91);
         yield return new WaitForSeconds(time);
         taskAvailability = true;
     }
