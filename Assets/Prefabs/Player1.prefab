@@ -16,9 +16,11 @@ GameObject:
   - component: {fileID: 5460442820753418795}
   - component: {fileID: 8214213565686407278}
   - component: {fileID: 8928350910597339212}
+  - component: {fileID: 1591999070629739944}
+  - component: {fileID: 6657261381637036592}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,6 +202,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ffca1a57-d11f-4fb6-9dbf-a97aad681211
     m_ActionName: 'Gameplay/Sprint2[/Keyboard/rightShift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a7361b01-f5c3-425c-8ee6-a12bf5eacec0
+    m_ActionName: 'Gameplay/PickUp1 (default)[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 58f32f3e-1f65-4164-bfa0-84136d49b491
+    m_ActionName: 'Gameplay/PickUp2 (default)[/Keyboard/u]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: adc96bd2-7a16-4a04-8b24-c5c243373f7d
+    m_ActionName: 'Gameplay/Sprint1 (default)[/Keyboard/leftShift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb3780e9-7097-478c-8549-b375d67b9127
+    m_ActionName: 'Gameplay/Sprint2 (default)[/Keyboard/rightShift]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -263,6 +281,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerWalking: {fileID: 7911591737914862162}
+--- !u!114 &1591999070629739944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847843120916770516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e1a8d35f9bc4d4583502d1bcee8394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 867214037394190280}
+  radius: 7
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  rate: -0.02
+--- !u!114 &6657261381637036592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847843120916770516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8098998e323f5c14cb05467360ac364e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 867214037394190280}
+  radius: 4
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &6427750026450217461
 GameObject:
   m_ObjectHideFlags: 0
