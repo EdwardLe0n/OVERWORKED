@@ -39,6 +39,11 @@ public class MoodHandler : MonoBehaviour
 
     void Update()
     {
+        if (states.isAsleep)
+        {
+            totalDelta = 0;
+            return;
+        }
         // while human is in a recharging room, do not lose mood to idle loss
         if (states.isRechargingMood)
         {

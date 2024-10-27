@@ -45,6 +45,11 @@ public class EnergyHandler : MonoBehaviour
     }
 
     void Update(){
+        if (states.isAsleep)
+        {
+            totalDelta = 0;
+            return;
+        }
         // while human is in a recharging room, do not lose energy to idle loss
         if (states.isRechargingEnergy)
         {

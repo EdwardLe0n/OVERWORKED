@@ -36,8 +36,15 @@ public class AgentPickupHandler : MonoBehaviour
             return;
         }
 
+        // if asleep, disable agent
+        if (states.isAsleep)
+        {
+            agent.enabled = false;
+            return;
+        }
+
         // if not close enough to floor, do nothing
-        if(!Physics.CheckSphere(groundCheck.position, groundCheckRadius, layerMask))
+        if (!Physics.CheckSphere(groundCheck.position, groundCheckRadius, layerMask))
         {
             return;
         }

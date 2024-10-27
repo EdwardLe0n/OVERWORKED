@@ -17,6 +17,7 @@ public class HumanStates : MonoBehaviour
 { 
     public bool isRechargingEnergy;
     public bool isRechargingMood;
+    public float sleepTime;
     private Energy energy;
     private Mood mood;
     private Job job;
@@ -59,10 +60,32 @@ public class HumanStates : MonoBehaviour
     // if human isCoffeed, they will work as if they were energized (faster), and will lose energy as if they are stressed (faster)
     public bool isCoffeed;
 
+    public bool isAsleep;
+
     void Awake(){
         energy = GetComponent<Energy>();
         mood = GetComponent<Mood>();
         job = GetComponent<Job>();
         pickup = GetComponent<Pickup>();
+    }
+
+    public void FallAsleep()
+    {
+        StartCoroutine(Asleep());
+    }
+
+    IEnumerator Asleep()
+    {
+        isAsleep = true;
+        yield return new WaitForSeconds(sleepTime);
+        isAsleep = false;
+
+        energy.ChangeEnergy(999999);
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        transform.position += Vector3.up * 0.25f;
+        transform.rotation = Quaternion.identity;
     }
 }

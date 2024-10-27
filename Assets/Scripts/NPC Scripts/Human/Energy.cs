@@ -29,9 +29,6 @@ public class Energy : MonoBehaviour
     [Range(0,1)]
     public float tiredThreshold;
 
-    [Tooltip("% Time spent asleep with pillow gun")]
-    public float sleepTime;
-
     // 0 <= energy <= maxEnergy
     private float energy;
 
@@ -73,7 +70,7 @@ public class Energy : MonoBehaviour
         return delta;
     }
 
-    public void TurnOff(){
+    /*public void TurnOff(){
         EnergyHandler energyHandler = GetComponent<EnergyHandler>();
         if (energyHandler != null){
             energyHandler.enabled = false;
@@ -92,5 +89,5 @@ public class Energy : MonoBehaviour
             energyHandler.enabled = true;
             energy = maxEnergy;
         }
-    }
+    }*/
 }
