@@ -11,14 +11,27 @@ public class InGameButton : MonoBehaviour
     [Header("Activation")]
     [Tooltip("Effect to occur on press")]
     public Activation activateEffect;
+    [Tooltip("Cooldown between activations")]
+    public float cooldown;
+    [Tooltip("Scalar when on cooldown")]
+    public float cdScale;
 
     [Header("Spawning")]
     [Tooltip("The position to spawn obj1 when activated")]
     public Transform spawnPos;
     public GameObject obj1;
     public GameObject obj2;
+    [Tooltip("Limit the number of items to be able to spawn total")]
+    public int spawnLimit;
 
     public bool usesActivation;
+
+    private bool isOffCooldown;
+
+    private void Awake()
+    {
+        isOffCooldown = true;
+    }
 
     public string debugType()
     {
@@ -39,6 +52,12 @@ public class InGameButton : MonoBehaviour
 
     public void onTouch()
     {
+        // if on cooldown, do nothing
+        if (!isOffCooldown)
+        {
+            return;
+        }
+
         if (usesActivation)
         {
             activateEffect.Activate();
@@ -48,7 +67,14 @@ public class InGameButton : MonoBehaviour
             switch (id)
             {
                 case 1:
+                    // if we reached the spawn limit, don't do anything
+                    if(spawnLimit <= 0)
+                    {
+                        return;
+                    }
+                    spawnLimit--;
                     spawnPickUpTemp();
+                    StartCoroutine("Cooldown");
                     break;
                 default:
                     Debug.Log(gameObject.name + " has a bad id!!!");
@@ -57,6 +83,16 @@ public class InGameButton : MonoBehaviour
             }
         }
 
+    }
+
+    private IEnumerator Cooldown()
+    {
+        Debug.Log("Starting cooldown for " + transform.name);
+        isOffCooldown = false;
+        transform.localScale *= cdScale;
+        yield return new WaitForSeconds(cooldown);
+        transform.localScale /= cdScale;
+        isOffCooldown = true;
     }
 
     public bool CanActivate()
