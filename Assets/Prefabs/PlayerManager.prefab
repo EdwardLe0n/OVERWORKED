@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1Prefab: {fileID: 847843120916770516, guid: e1a59e2a32f127f41b1296663af50944, type: 3}
-  player2Prefab: {fileID: 1160625760998904285, guid: bd037f635abe9664786718737f9d8e5a, type: 3}
+  player2Prefab: {fileID: 847843120916770516, guid: e9979ecc1aba4c547bd014fdf86f9e62, type: 3}
 --- !u!114 &664017040783081832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,8 +106,36 @@ MonoBehaviour:
     m_ActionName: 'Gameplay/Move2[/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 52eb3c4c-f2ca-4695-bae3-c06489cd5098
-    m_ActionName: 'Player2/Move2[/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l]'
+    m_ActionId: 02d21469-d38a-44a6-afb1-645119d76218
+    m_ActionName: 'Gameplay/PickUp1[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a7361b01-f5c3-425c-8ee6-a12bf5eacec0
+    m_ActionName: 'Gameplay/PickUp1 (default)[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4e945c3b-ee8c-435f-ac3a-8febf525fd1a
+    m_ActionName: 'Gameplay/PickUp2[/Keyboard/u]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 58f32f3e-1f65-4164-bfa0-84136d49b491
+    m_ActionName: 'Gameplay/PickUp2 (default)[/Keyboard/u]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f2a611b9-6384-4bc9-8789-06db4f3ae99a
+    m_ActionName: 'Gameplay/Sprint1[/Keyboard/leftShift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: adc96bd2-7a16-4a04-8b24-c5c243373f7d
+    m_ActionName: 'Gameplay/Sprint1 (default)[/Keyboard/leftShift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ffca1a57-d11f-4fb6-9dbf-a97aad681211
+    m_ActionName: 'Gameplay/Sprint2[/Keyboard/rightShift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb3780e9-7097-478c-8549-b375d67b9127
+    m_ActionName: 'Gameplay/Sprint2 (default)[/Keyboard/rightShift]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay

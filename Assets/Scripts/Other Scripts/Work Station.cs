@@ -78,6 +78,7 @@ public class WorkStation : MonoBehaviour
         {
             taskCompleted = true;
             taskAvailability = false;
+            ReadyIndicator.SetActive(false);
             done.Invoke();
 
             // Sanity Check
