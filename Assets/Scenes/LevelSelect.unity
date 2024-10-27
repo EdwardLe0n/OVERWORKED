@@ -254,8 +254,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Select Level
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1046,8 +1046,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: <
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1274,11 +1274,15 @@ PrefabInstance:
     - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
     - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
@@ -1699,11 +1703,15 @@ PrefabInstance:
     - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
     - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
@@ -1887,57 +1895,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 201341715}
     m_Modifications:
     - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_Transition
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_Colors.m_DisabledColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.97017765
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.5990566
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 154942963}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelSelector, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 5628287846088604168}
-    - target: {fileID: 702086932416015307, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.UI.Button, UnityEngine.UI
-      objectReference: {fileID: 0}
     - target: {fileID: 3394573156424828489, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_Name
       value: Level Button
@@ -1949,10 +1909,6 @@ PrefabInstance:
     - target: {fileID: 6219314351944784534, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6219314351944784534, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6219314351944784534, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2025,54 +1981,6 @@ PrefabInstance:
     - target: {fileID: 6219314351944784534, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 8035990005516670804, guid: 13f079f640f7e17419a61c9a1398dd0f, type: 3}
-      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
-      value: 1801810542
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 3dff45e4555ad154f91d4bd84b1c8cba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 3dff45e4555ad154f91d4bd84b1c8cba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 3dff45e4555ad154f91d4bd84b1c8cba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 3dff45e4555ad154f91d4bd84b1c8cba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 3dff45e4555ad154f91d4bd84b1c8cba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Select
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 3dff45e4555ad154f91d4bd84b1c8cba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelSelector, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 3dff45e4555ad154f91d4bd84b1c8cba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level01
-      objectReference: {fileID: 0}
-    - target: {fileID: 702086932416015307, guid: 3dff45e4555ad154f91d4bd84b1c8cba, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568990654725855835, guid: 3dff45e4555ad154f91d4bd84b1c8cba, type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

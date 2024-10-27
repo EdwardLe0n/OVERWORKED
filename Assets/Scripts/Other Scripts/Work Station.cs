@@ -24,6 +24,10 @@ public class WorkStation : MonoBehaviour
     public bool taskCompleted = false;
 
     public GameObject levelMan;
+    public GameObject ReadyIndicator;
+
+    public delegate void TaskComplete();
+    public static event TaskComplete done;
 
     // Resets vars just in case
     private void Awake()
@@ -37,9 +41,23 @@ public class WorkStation : MonoBehaviour
 
     }
 
+    public void Update(){
+        if(taskAvailability){
+            ReadyIndicator.SetActive(true);
+        } else {
+            ReadyIndicator.SetActive(false);
+        }
+    }
+
+    private void OnDestroy(){
+        LevelManager.checkTheLevel -= sendInfo;
+    }
+
     private void Start(){
         if(taskType == 3){
             StartCoroutine(DirtyBathroom());
+        } else if (taskType == 1){
+            StartCoroutine(Customer());
         }
     }
 
@@ -59,6 +77,8 @@ public class WorkStation : MonoBehaviour
         if (taskProgress >= taskTime)
         {
             taskCompleted = true;
+            taskAvailability = false;
+            done.Invoke();
 
             // Sanity Check
             Debug.Log("Task has been completed!");
@@ -91,6 +111,12 @@ public class WorkStation : MonoBehaviour
 
     public IEnumerator DirtyBathroom(){
         float time = Random.Range(10, 51);
+        yield return new WaitForSeconds(time);
+        taskAvailability = true;
+    }
+
+    public IEnumerator Customer(){
+        float time = Random.Range(20, 91);
         yield return new WaitForSeconds(time);
         taskAvailability = true;
     }

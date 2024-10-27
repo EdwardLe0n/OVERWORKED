@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 72789862508801807}
   - component: {fileID: 4322237770965993119}
   - component: {fileID: 775272261981150696}
+  - component: {fileID: 4794076781307366934}
   m_Layer: 6
   m_Name: Dead Human
   m_TagString: Dead Human
@@ -121,6 +122,24 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: -0.1}
   m_TimeToStationary: 0.5
+--- !u!114 &4794076781307366934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998956151284938170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e1a8d35f9bc4d4583502d1bcee8394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 6259116860619488906}
+  radius: 3
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  rate: -0.5
 --- !u!1 &4166880634543530809
 GameObject:
   m_ObjectHideFlags: 0

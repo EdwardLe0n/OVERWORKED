@@ -45,7 +45,7 @@ public class Mood : MonoBehaviour
     }
 
     public bool IsDying{
-        get { return mood <= -1; }
+        get { return mood <= -0.98; }
     }
 
     void Awake(){

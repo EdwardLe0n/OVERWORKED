@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource itemBonked;
     public AudioSource humanBonked;
     public AudioSource humanDied;
+    public AudioSource taskComplete;
+
+    private LevelManager levelManager;
 
     private void Awake()
     {
@@ -25,7 +29,29 @@ public class AudioManager : MonoBehaviour
         {
             DontDestroyOnLoad(this);
         }
+    }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // runs every time new scene is loaded
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // play bg music if scene is a level (only levels contain LevelManager)
+        levelManager = FindAnyObjectByType<LevelManager>();
+        if(levelManager != null) {
+            backgroundMusic.Play(); // need to restart music if level bc start will not be called again (bc DontDestroyOnLoad)
+        }
+        else {
+            backgroundMusic.Stop();
+        }
     }
 
     void Start()
@@ -35,15 +61,18 @@ public class AudioManager : MonoBehaviour
         Pillow.pillowHit += PillowHit;
         Pickup.bonk += PickupItem;
         HumanDie.bonk += HumanItem;
-        HumanDie.bonk += HumanDied;
+        HumanDie.died += HumanDied;
+        WorkStation.done += TaskComplete;
     }
 
-    void OnDestroy(){
+    void OnDestroy()
+    {
         PillowGun.ShotGun -= PillowShot;
         Pillow.pillowHit -= PillowHit;
         Pickup.bonk -= PickupItem;
         HumanDie.bonk -= HumanItem;
-        HumanDie.bonk -= HumanDied;
+        HumanDie.died -= HumanDied;
+        WorkStation.done -= TaskComplete;
     }
 
     public void PillowShot(){
@@ -65,5 +94,9 @@ public class AudioManager : MonoBehaviour
 
     public void HumanDied(){
         humanDied.Play();
+    }
+
+    public void TaskComplete(){
+        taskComplete.Play();
     }
 }
