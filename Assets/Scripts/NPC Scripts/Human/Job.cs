@@ -55,7 +55,13 @@ public class Job : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
+        // don't try job stuff while asleep
+        if (states.isAsleep)
+        {
+            return;
+        }
+
         // don't do any job things while picked up
         if(states.IsPickedUp){
             return;

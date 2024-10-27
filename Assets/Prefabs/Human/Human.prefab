@@ -435,7 +435,6 @@ MonoBehaviour:
   maxEnergy: 300
   energizedThreshold: 0.75
   tiredThreshold: 0.25
-  sleepTime: 10
 --- !u!114 &2291303865167612056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +450,6 @@ MonoBehaviour:
   moodStart: 1
   happyThreshold: 0.5
   stressedThreshold: -0.5
-  sleepTime: 10
 --- !u!114 &7954828690012559629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,8 +504,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRechargingEnergy: 0
   isRechargingMood: 0
+  sleepTime: 10
   isCatted: 0
   isCoffeed: 0
+  isAsleep: 0
 --- !u!114 &705886496077258684
 MonoBehaviour:
   m_ObjectHideFlags: 0

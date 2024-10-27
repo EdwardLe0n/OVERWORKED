@@ -31,6 +31,12 @@ public class AreaStress : MonoBehaviour
                 continue;
             }
 
+            HumanStates states = col.transform.GetComponent<HumanStates>();
+            if (states.isAsleep)
+            {
+                continue;
+            }
+
             factor = Vector3.Distance(origin.position, col.transform.position) / radius;
             factor = 1 - factor;
             // Debug.Log(col.name + ": " + factor);

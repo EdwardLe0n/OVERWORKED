@@ -29,9 +29,6 @@ public class Mood : MonoBehaviour
     [Range(-1,1)]
     public float stressedThreshold;
 
-    [Tooltip("% Time spent asleep with pillow gun")]
-    public float sleepTime;
-
     // -1 <= mood <= 1
     private float mood;
     private HumanStates states;
@@ -77,7 +74,7 @@ public class Mood : MonoBehaviour
     //Pillow change mood to max.
     //Turn off handlers.
 
-    public void TurnOff(){
+    /*public void TurnOff(){
         MoodHandler moodHandler = GetComponent<MoodHandler>();
         if (moodHandler != null){
             moodHandler.enabled = false;
@@ -96,5 +93,5 @@ public class Mood : MonoBehaviour
             moodHandler.enabled = true;
             mood = 1f;
         }
-    }
+    }*/
 }
