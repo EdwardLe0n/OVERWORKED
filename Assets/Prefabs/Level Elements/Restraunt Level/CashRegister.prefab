@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 1521433048377649045}
   - component: {fileID: 6473812529401154936}
   - component: {fileID: 7004793905669832461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CashRegister
   m_TagString: Untagged
   m_Icon: {fileID: 0}
