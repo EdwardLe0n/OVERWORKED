@@ -8,6 +8,14 @@ public class PlacingArea : MonoBehaviour
     public float type;
     public int specialTableType;
 
+    /*
+     * special type table list:
+     * 
+     * 1: passive converter [i.e. drink machine]
+     * 2: human converter [i.e. item prepper]
+     * 
+     */
+
     [Header("Current Item Variables")]
     public GameObject currentPick;
     public bool hasItem = false;
@@ -29,6 +37,8 @@ public class PlacingArea : MonoBehaviour
                 return "table";
             case 2:
                 return "station";
+            case 3:
+                return "human-station";
             default:
                 return "error";
         }
@@ -85,11 +95,37 @@ public class PlacingArea : MonoBehaviour
 
     public void itemGiven(GameObject item)
     {
+        // sets the current pick to the given item
         currentPick = item;
+        // also sets the fact that it has an item true
         hasItem = true;
+
+        // then depending on the placing area, it'll do different things
         if (type == 2)
         {
             StartTimer();
+        }
+        else if (type == 3)
+        {
+            // switch case handler for the special table type
+            switch (specialTableType)
+            {
+                case 2:
+
+                    // saves the work station script 
+                    WorkStation ws = this.gameObject.GetComponent<WorkStation>();
+
+                    // checks the status 
+                    if (!ws.getStatus())
+                    {
+                        // checks if its the right item to change
+
+
+
+                    }
+
+                    break;
+            }
         }
     }
 
@@ -101,6 +137,22 @@ public class PlacingArea : MonoBehaviour
         if (type == 2)
         {
             ResetTimer();
+        }
+        else if (type == 3)
+        {
+            // switch case handler for the special table type
+            switch (specialTableType)
+            {
+                case 2:
+
+                    // saves the work station script 
+                    WorkStation ws = this.gameObject.GetComponent<WorkStation>();
+
+                    // makes sure to set the availibity to false
+                    ws.setAvailability(false);
+
+                    break;
+            }
         }
 
     }
