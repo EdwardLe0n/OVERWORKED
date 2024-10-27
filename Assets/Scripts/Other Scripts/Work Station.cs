@@ -29,6 +29,15 @@ public class WorkStation : MonoBehaviour
     public delegate void TaskComplete();
     public static event TaskComplete done;
 
+    // bool to make see if the task is reuseable
+    public bool reuseable = false;
+
+    // public int for the handling of how many times a station can be reused
+    public int reuseAmount = -1;
+
+    // bool to see if it even adds to the tasks that need to be done
+    public bool forCompletion = true;
+
     // Resets vars just in case
     private void Awake()
     {
@@ -36,8 +45,12 @@ public class WorkStation : MonoBehaviour
         taskProgress = 0f;
         taskCompleted = false;
 
-        // connects to the level manager check up
-        LevelManager.checkTheLevel += sendInfo;
+        // if this work is for sompletion, then it'll be hooked up to the level manager
+        if (forCompletion)
+        {
+            // connects to the level manager check up
+            LevelManager.checkTheLevel += sendInfo;
+        }
 
     }
 
@@ -81,14 +94,36 @@ public class WorkStation : MonoBehaviour
             ReadyIndicator.SetActive(false);
             done.Invoke();
 
-            // Sanity Check
-            Debug.Log("Task has been completed!");
+            // if  the station is for completion, then it'll let the level manager know
+            if (forCompletion)
+            {
+                // checks if a job is reuseable and by the amount of times it is
+                if (reuseable)
+                {
 
-            // deconnects to the level manager check up
-            LevelManager.checkTheLevel -= sendInfo;
-            levelMan.GetComponent<LevelManager>().taskCompleted();
-            //LevelManager.checkTheLevel();
+                    if (reuseAmount != -1)
+                    {
+                        reuseAmount--;
+                        if (reuseAmount == 0)
+                        {
+                            taskCompleted = true;
+                            // deconnects to the level manager check up
+                            LevelManager.checkTheLevel -= sendInfo;
+                        }
 
+                    }
+
+                }
+                else
+                {
+                    // deconnects to the level manager check up
+                    LevelManager.checkTheLevel -= sendInfo;
+                }
+
+                // lets the level manager know that a task been completed
+                levelMan.GetComponent<LevelManager>().taskCompleted();
+            }
+            
         }
     }
 
@@ -103,7 +138,12 @@ public class WorkStation : MonoBehaviour
     {
         return taskAvailability;
     }
-    
+
+    public void setAvailability(bool temp)
+    {
+        taskAvailability = temp;
+    }
+
     // Sends info about task completion over to the level manager
     public void sendInfo()
     {

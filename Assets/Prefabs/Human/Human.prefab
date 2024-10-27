@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testJob: {fileID: 0}
-  radiusCheck: 0.5
+  radiusCheck: 1.5
   layerToLookFor:
     serializedVersion: 2
     m_Bits: 128

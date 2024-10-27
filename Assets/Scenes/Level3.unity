@@ -3526,6 +3526,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9108434490813556071, guid: 924917719d723fa4d9566d9d95c4a88f, type: 3}
   m_PrefabInstance: {fileID: 1805931606}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1304192360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4674842949131200030, guid: 318ad029108edef4c92b8a361d799526, type: 3}
+  m_PrefabInstance: {fileID: 1297387159019510607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1346296999
 GameObject:
   m_ObjectHideFlags: 0
@@ -6640,7 +6651,7 @@ PrefabInstance:
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: timerText
       value: 
-      objectReference: {fileID: 1242870600}
+      objectReference: {fileID: 1304192360}
     - target: {fileID: 1868160948400739171, guid: c8addde4312e4934b8d108482ac936a0, type: 3}
       propertyPath: winScreen
       value: 
